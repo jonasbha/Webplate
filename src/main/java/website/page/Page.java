@@ -1,21 +1,28 @@
 package website.page;
 
 import website.HTML;
+import website.list.ArticleList;
+import website.page.component.Article;
 import website.page.component.ArticleGroup;
 import website.page.component.Component;
 import website.page.component.SchemaGroup;
 import website.page.feature.Feature;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Page implements HTML {
     private String title;
-    private String description;
+    public String description;
     private String[] links;
 
     public Feature feature = new Feature();
+
+
     public SchemaGroup schema;
     public ArticleGroup article;
+
+    public ArticleList<Article> articles = new ArticleList<>();
 
     public Page(String title) {
 

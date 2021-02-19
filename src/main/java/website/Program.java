@@ -9,6 +9,11 @@ public class Program {
     public static void main(String[] args) {
         // alle cases testes senere
         Page page = new Page("title");
+
+        page.description = "";
+        page.schema.first().add();
+        page.schema.get(2).add();
+
         page.schema.add();
         page.schema.add(2);
         page.schema.get(2);
@@ -37,8 +42,12 @@ public class Program {
         Webplate.html.create();
         Webplate.html.addPage(page);
 
-        // how to decide order without polluting page scope.
+        page.articles.add();
+
+        // how to decide order of component without polluting page scope.
         // how to do page.title?
         //page.article = new ArticleGroup();
+
+
     }
 }
