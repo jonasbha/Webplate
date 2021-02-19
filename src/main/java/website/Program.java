@@ -8,7 +8,9 @@ public class Program {
         // alle cases testes senere
         Page page = new Page("title");
 
-        page.description = "";
+        page.config.addDescription("Hello");
+        page.config.addStylesheet();
+        page.config.setTitle("New title");
         page.schema.add();
         page.schema.add(2);
         page.schema.remove(2);
@@ -29,6 +31,8 @@ public class Program {
         page.article.getLast().section.add(2);
         page.article.getLast().section.removeLast();
         page.article.getLast().section.remove(2);
+
+        page.feature.addCopyright();
 
         Webplate.html.create();
         Webplate.html.addPage(page);

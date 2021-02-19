@@ -6,17 +6,17 @@ import website.page.component.Article;
 import website.page.component.Schema;
 import website.page.feature.Feature;
 
+import java.util.LinkedList;
+
 public class Page  {
-    private String title;
-    public String description;
-    private String[] links;
+    //public String title;
+    //public String description;
+    //public LinkedList<String> stylesheet;
 
     public Feature feature = new Feature();
     public ArticleList<Article> article = new ArticleList<>();
     public SchemaList<Schema> schema = new SchemaList<>();
 
-    public Page(String title) {
-
-    }
+    public Page(String title) {}
 
 }
