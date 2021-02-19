@@ -1,8 +1,6 @@
 package website;
 
 import website.page.Page;
-import website.page.component.Article;
-import website.page.component.ArticleGroup;
 
 public class Program {
 
@@ -11,23 +9,17 @@ public class Program {
         Page page = new Page("title");
 
         page.description = "";
-        page.schema.first().add();
-        page.schema.get(2).add();
-
-        page.schema.add();
-        page.schema.add(2);
-        page.schema.get(2);
-        page.schema.remove(2);
-        page.schema.removeLast();
-        page.schema.fieldset.add();
-        page.schema.get(2).fieldset.add(2);
-        page.schema.fieldset.remove(2);
-        page.schema.fieldset.removeLast();
-
-        page.schema.fieldset.field.add("Number", true);
-        page.schema.fieldset.field.add("Email");
-        page.schema.fieldset.get(3).field.add("Name", true);
-        page.schema.get(2).fieldset.get(3).field.add("Comment");
+        page.schemas.add();
+        page.schemas.add(2);
+        page.schemas.remove(2);
+        page.schemas.removeLast();
+        page.schemas.get(1).fieldsets.add();
+        page.schemas.getLast().fieldsets.add(2);
+        page.schemas.getLast().fieldsets.remove(2);
+        page.schemas.getLast().fieldsets.removeLast();
+        page.schemas.getLast().fieldsets.getLast();
+        page.schemas.getLast().fieldsets.get(2).fields.getLast().add("Number", true);
+        page.schemas.getLast().fieldsets.get(2).fields.getFirst().add("Email");
 
         page.article.add();
         page.article.add(2);

@@ -1,41 +1,11 @@
 package website.page.component.property;
 
-import website.page.CRUD;
-import website.page.component.Schema;
+import website.list.FieldList;
+import website.list.FieldsetList;
 
-public class FieldSet implements CRUD {
+import java.util.ArrayList;
 
-    public Field field;
-    Schema schema;
+public class FieldSet {
 
-    public FieldSet(Schema schema) {
-        this.schema = schema;
-        field = new Field();
-    }
-
-
-    @Override
-    public String getHTML() {
-        return null;
-    }
-
-    @Override
-    public void add(int n) {
-
-    }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void removeLast() {
-
-    }
-
-    @Override
-    public void remove(int n) {
-
-    }
+    public FieldList<Field> fields = new FieldList<>();
 }

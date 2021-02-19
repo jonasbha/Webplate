@@ -1,15 +1,8 @@
 package website.page.feature;
 
-import website.HTML;
-
-public class Feature implements HTML {
+public class Feature  {
 
     Copyright copyright;
 
-    @Override
-    public String getHTML() {
-        return null;
-    }
-
-    public void addCopyright() {};
+    public void addCopyright() {}
 }
