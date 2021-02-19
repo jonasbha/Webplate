@@ -12,8 +12,8 @@ public class Page  {
     private String[] links;
 
     public Feature feature = new Feature();
-    public ArticleList<Article> articles = new ArticleList<>();
-    public SchemaList<Schema> schemas = new SchemaList<>();
+    public ArticleList<Article> article = new ArticleList<>();
+    public SchemaList<Schema> schema = new SchemaList<>();
 
     public Page(String title) {
 

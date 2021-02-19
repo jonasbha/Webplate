@@ -1,18 +1,18 @@
 package website.list;
 
+import website.page.component.Article;
+
 public class FieldsetList<E> extends ComponentList<E> {
 
-    private int fieldsets;
+
     @Override
     public void add() {
-        fieldsets++;
+        this.add(type.cast(Article.class));
     }
 
-    public void add(int schemas) {
-        this.fieldsets += schemas;
-    }
-
-    public int getFieldsets() {
-        return fieldsets;
+    @Override
+    public void add(int fieldsets) {
+        for (int i = 0; i < fieldsets; i++)
+            this.add(type.cast(Article.class));
     }
 }

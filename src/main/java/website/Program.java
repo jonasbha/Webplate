@@ -9,32 +9,30 @@ public class Program {
         Page page = new Page("title");
 
         page.description = "";
-        page.schemas.add();
-        page.schemas.add(2);
-        page.schemas.remove(2);
-        page.schemas.removeLast();
-        page.schemas.get(1).fieldsets.add();
-        page.schemas.getLast().fieldsets.add(2);
-        page.schemas.getLast().fieldsets.remove(2);
-        page.schemas.getLast().fieldsets.removeLast();
-        page.schemas.getLast().fieldsets.getLast();
-        page.schemas.getLast().fieldsets.get(2).fields.getLast().add("Number", true);
-        page.schemas.getLast().fieldsets.get(2).fields.getFirst().add("Email");
+        page.schema.add();
+        page.schema.add(2);
+        page.schema.remove(2);
+        page.schema.removeLast();
+        page.schema.get(1).fieldset.add();
+        page.schema.getLast().fieldset.add(2);
+        page.schema.getLast().fieldset.remove(2);
+        page.schema.getLast().fieldset.removeLast();
+        page.schema.getLast().fieldset.getLast();
+        page.schema.getLast().fieldset.get(2).field.getLast().add("Number", true);
+        page.schema.getLast().fieldset.get(2).field.getFirst().add("Email");
 
         page.article.add();
         page.article.add(2);
-        page.article.get(1);
-        page.article.remove(2);
+        page.article.getFirst();
         page.article.removeLast();
-        page.article.section.add();
-        page.article.section.add(2);
-        page.article.section.remove(2);
-        page.article.section.removeLast();
+        page.article.getLast().section.add();
+        page.article.getLast().section.add(2);
+        page.article.getLast().section.removeLast();
+        page.article.getLast().section.remove(2);
 
         Webplate.html.create();
         Webplate.html.addPage(page);
 
-        page.articles.add();
 
         // how to decide order of component without polluting page scope.
         // how to do page.title?

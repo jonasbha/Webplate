@@ -5,6 +5,6 @@ import website.page.component.property.FieldSet;
 
 public class Schema {
 
-    public FieldsetList<FieldSet> fieldsets = new FieldsetList<>();
+    public FieldsetList<FieldSet> fieldset = new FieldsetList<>();
 
 }

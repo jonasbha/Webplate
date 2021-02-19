@@ -4,18 +4,17 @@ import website.page.component.Article;
 
 public class ArticleList<E> extends ComponentList<E> {
 
-    private int articles;
+
     @Override
     public void add() {
-        articles++;
+        this.add(type.cast(Article.class));
     }
 
-    public void add(int articles) {
-        this.articles += articles;
+    @Override
+    public void add(int sections) {
+        for (int i = 0; i < sections; i++)
+            this.add(type.cast(Article.class));
     }
 
-    public int getArticles() {
-        return articles;
-    }
 
 }
