@@ -1,28 +1,20 @@
 # website.page
 ---
 
-- 
+- Provides the classes for the different page structures that is contained in the website
 
-See: [description](#description-of-package-website)
-
-#### Interfaces
----
-| Interface | Description |
-| ---|---|
-| - [`HTML`](#html) | An interface responsible for generating HTML out of classes |
-    
+See: [description](#description)
     
 #### Classes
 ---
 | Class | Description |
 | --- | --- |
-| - [`Program`](#program) | TEST |
-| - [`Webplate`](#webplate) | The class for the fundamental configuration of each page that is part of the website |
+| - [`Page`](#program) | The class represents the page of the website. |
 
     
-### Description of package website
+### Description
 
-A class that implements this interface will be able to generate html code trough invocation of the Website class, based on the containing instance properties. 
+Provides the classes for the different page structures that is contained in the website
 
 Back to [index](../../#webplate-api-specification-under-development)
 
