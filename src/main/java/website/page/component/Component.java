@@ -1,13 +1,5 @@
 package website.page.component;
 
-import website.HTML;
+import website.page.CRUD;
 
-public interface Component extends HTML {
-
-    void add();
-
-    void add(int sections);
-
-    void removeLast();
-
-}
+public interface Component extends CRUD {}

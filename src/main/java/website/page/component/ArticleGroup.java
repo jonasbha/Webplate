@@ -1,7 +1,7 @@
 package website.page.component;
 
 import website.page.Page;
-import website.page.component.section.SectionGroup;
+import website.page.component.property.Section;
 
 import java.util.LinkedList;
 
@@ -10,15 +10,16 @@ public class ArticleGroup implements Component {
     private final LinkedList<Article> articles = new LinkedList<>();
     Page page;
 
-    public int section;
+    public Section section;
 
 
     public ArticleGroup(Page page) {
         this.page = page;
+        section = new Section(this);
     }
 
 
-    public Component get(int i) {
+    public Article get(int i) {
         return articles.get(i);
     }
 
@@ -39,6 +40,11 @@ public class ArticleGroup implements Component {
 
     @Override
     public void removeLast() {
+
+    }
+
+    @Override
+    public void remove(int articleNr) {
 
     }
 }

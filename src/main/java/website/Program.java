@@ -1,28 +1,44 @@
 package website;
 
 import website.page.Page;
+import website.page.component.Article;
+import website.page.component.ArticleGroup;
 
 public class Program {
 
     public static void main(String[] args) {
-        // testes senere
-        Page page = new Page("hello");
+        // alle cases testes senere
+        Page page = new Page("title");
         page.schema.add();
-        page.schema.get(1).add();
+        page.schema.add(2);
+        page.schema.get(2);
+        page.schema.remove(2);
         page.schema.removeLast();
-        page.schema.section.add();
-        page.schema.section.get(1);
-        // remove last?
-        page.schema.section.removeLast();
+        page.schema.fieldset.add();
+        page.schema.get(2).fieldset.add(2);
+        page.schema.fieldset.remove(2);
+        page.schema.fieldset.removeLast();
+
+        page.schema.fieldset.field.add("Number", true);
+        page.schema.fieldset.field.add("Email");
+        page.schema.fieldset.get(3).field.add("Name", true);
+        page.schema.get(2).fieldset.get(3).field.add("Comment");
 
         page.article.add();
-        page.article.removeLast();
-
-        //prob: change getter for nested class so no need to extend. easy
+        page.article.add(2);
         page.article.get(1);
+        page.article.remove(2);
+        page.article.removeLast();
+        page.article.section.add();
+        page.article.section.add(2);
+        page.article.section.remove(2);
+        page.article.section.removeLast();
 
+        Webplate.html.create();
+        Webplate.html.addPage(page);
 
-        //Webplate.Html.create();
-        //Webplate.Html.addPage(page);
+        // how to decide order without polluting page scope.
+        // how to do page.title?
+        //page.article = new ArticleGroup();
     }
 }

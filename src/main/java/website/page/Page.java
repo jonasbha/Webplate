@@ -12,7 +12,7 @@ public class Page implements HTML {
     private String title;
     private String description;
     private String[] links;
-    public LinkedList<Component> components;
+
     public Feature feature = new Feature();
     public SchemaGroup schema;
     public ArticleGroup article;
@@ -23,9 +23,10 @@ public class Page implements HTML {
         article = new ArticleGroup(this);
     }
 
+
     @Override
     public String getHTML() {
-        components.get(1).getHTML();
+        article.section.getHTML();
         return "";
     }
 }

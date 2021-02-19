@@ -3,12 +3,14 @@ package website.page.component;
 import website.HTML;
 import website.page.Page;
 
-public class Article extends ArticleGroup {
+public class Article {
+
+    ArticleGroup group;
 
     private int sections;
 
-    public Article(Page page) {
-        super(page);
+    public Article() {
+
     }
 
     public void addSection() {};

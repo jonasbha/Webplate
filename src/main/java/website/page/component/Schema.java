@@ -1,18 +1,21 @@
 package website.page.component;
 
-import website.page.component.section.Section;
+import website.page.component.property.FieldSetGroup;
 
 public class Schema {
 
-    Section section;
-    SchemaGroup group;
+    public FieldSetGroup fieldset;
+    private SchemaGroup group;
 
-    public void add() {
-        group.add();
+    public Schema(SchemaGroup group) {
+        fieldset = new FieldSetGroup(this);
+        this.group = group;
+        this.fieldset.add();
     }
-
-    public void add(int n) {
-        group.add();
+    public Schema (SchemaGroup group, int sections) {
+        fieldset = new FieldSetGroup(this);
+        this.group = group;
+        this.fieldset.add(sections);
     }
 
 }
