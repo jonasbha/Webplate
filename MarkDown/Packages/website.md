@@ -24,6 +24,6 @@ See: [description](#description-of-package-website)
 
 A class that implements this interface will be able to generate html code trough invocation of the Website class, based on the containing instance properties. 
 
-Back to [index](../../#Webplate-api-specification-under-development)
+Back to [index](../../#webplate-api-specification-under-development)
 
 ---
