@@ -25,7 +25,7 @@
 
 - Provides the classes that are responsible for the fundamental configuration
 
-See: [description](#descriptionofpackagewebsite)
+See: [description](#description-of-package-website)
 
 #### Interfaces
 ---
@@ -51,7 +51,7 @@ A class that implements this interface will be able to generate html code trough
 ### website.page 
 ---
 
-Check this link: [link](website_page.md)
+Check this link: [link](/MarkDown/website_page.md)
 
 ### website.list 
 ---
