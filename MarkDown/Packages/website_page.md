@@ -16,6 +16,6 @@ See: [description](#description)
 
 Provides the classes for the different page structures that is contained in the website
 
-Back to [index](../../#webplate-api-specification-under-development)
+Back to [index](../../README.md#webplate-api-specification-under-development)
 
 ---
