@@ -11,12 +11,12 @@
 ---
 | package | description |
 | --- | --- |
-| ##### [`website`](#website) | the root package of this project |
-| ##### [`website.page`](#website.page) |  |
-| ##### [`website.list`](#website.list) |  |
-| ##### [`website.page.component`](#website.page.component) |  |
-| ##### [`website.page.feature`](#website.page.faeture) |  |
-| ##### [`website.page.component.property`](#website.page.component.property)|  |
+|  [`website`](#website) | the root package of this project |
+|  [`website.page`](#websitepage) |  |
+|  [`website.list`](#websitelist) |  |
+|  [`website.page.component`](#websitepagecomponent) |  |
+|  [`website.page.feature`](#websitepagefeature) |  |
+|  [`website.page.component.property`](#websitepagecomponentproperty)|  |
 
 ---
 
