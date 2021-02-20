@@ -42,6 +42,7 @@ public class Program {
 
         Webplate.html.create();
         Webplate.html.addPage(page);
+        Webplate.html.setLanguage("nb");
 
     }
 }

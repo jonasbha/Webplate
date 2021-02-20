@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Webplate {
 
     public static class html {
-        private String language;
+        private static String language;
         private static ArrayList<Page> pages;
 
 
@@ -21,6 +21,14 @@ public class Webplate {
 
         public void delete() {
 
+        }
+
+        public static void setLanguage(String language) {
+            html.language = language;
+        }
+
+        public static String getLanguage() {
+            return language;
         }
 
         public static void create() {

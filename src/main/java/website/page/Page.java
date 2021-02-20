@@ -6,8 +6,6 @@ import website.page.component.Article;
 import website.page.component.Schema;
 import website.page.feature.Feature;
 
-import java.util.LinkedList;
-
 public class Page  {
 
     public Meta meta = new Meta();
@@ -18,6 +16,11 @@ public class Page  {
 
     public Page(String title) {
         meta.setTitle(title);
+    }
+
+    public Page(String title, String description) {
+        meta.setTitle(title);
+        meta.setDescription(description);
     }
 
     public void removeAllComponents() {
