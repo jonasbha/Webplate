@@ -14,12 +14,12 @@ public class Page  {
     public ArticleList article = new ArticleList();
     public SchemaList schema = new SchemaList();
 
-    //singleton
     public ArrayList<Component> components = new ArrayList<>();
 
     public Page(String title) {
         metadata.setTitle(title);
         schema.config.setParent(this);
+        article.config.setParent(this);
     }
 
     public Page(String title, String description) {

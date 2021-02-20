@@ -31,8 +31,8 @@ public class Program {
         page.schema.getFirst().fieldset.removeAll();
         page.schema.removeAll();
 
-        page.article.add();
-        page.article.add(2);
+        page.article.addDefault();
+        page.article.addEmpty(2);
         page.article.getFirst();
         page.article.removeLast();
         page.article.getLast().section.add();
