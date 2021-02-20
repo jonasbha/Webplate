@@ -1,6 +1,6 @@
-package website.page.component.property;
+package webplate.page.component.property;
 
-import website.list.FieldList;
+import webplate.list.FieldList;
 
 public class FieldSet {
 

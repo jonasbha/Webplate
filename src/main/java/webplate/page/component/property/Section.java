@@ -1,4 +1,4 @@
-package website.page.component.property;
+package webplate.page.component.property;
 
 public class Section {
 
@@ -10,7 +10,7 @@ public class Section {
 
     public void add(int sections) {}
 
-    public void remove(int section) {}
+    public void remove(int index) {}
 
     public void removeLast() {}
 

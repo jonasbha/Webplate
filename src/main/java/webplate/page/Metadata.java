@@ -1,8 +1,8 @@
-package website.page;
+package webplate.page;
 
 import java.util.LinkedList;
 
-public class Meta {
+public class Metadata {
 
     private String title;
     private String description;
@@ -29,4 +29,5 @@ public class Meta {
     }
 
     public void addStylesheet() {}
+
 }

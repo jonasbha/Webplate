@@ -1,6 +1,6 @@
-package website;
+package webplate;
 
-import website.page.Page;
+import webplate.page.Page;
 
 public class Program {
 
@@ -8,8 +8,15 @@ public class Program {
         // alle cases testes senere
         Page page = new Page("title");
 
-        page.schema.add();
-        page.schema.add(2);
+        page.schema.addDefault();
+        System.out.println(page.components.get(0));
+        page.schema.addEmpty();
+        page.schema.addDefault(3);
+        page.schema.addDefault(2, true);
+        page.schema.addDefault(false);
+        page.schema.getLast().config.setDefault(false);
+        page.schema.addEmpty();
+        page.schema.addEmpty(2);
         page.schema.remove(2);
         page.schema.removeLast();
         page.schema.get(1).fieldset.add();
@@ -19,6 +26,7 @@ public class Program {
         page.schema.getLast().fieldset.getLast();
         page.schema.getLast().fieldset.get(2).field.getLast().add("Number", true);
         page.schema.get(2).fieldset.get(2).field.get(2).add("Email");
+        page.schema.get(2).fieldset.get(2).field.get(2).add("TextField");
         page.schema.getFirst().fieldset.getFirst().field.removeAll();
         page.schema.getFirst().fieldset.removeAll();
         page.schema.removeAll();
@@ -32,11 +40,9 @@ public class Program {
         page.article.getLast().section.removeLast();
         page.article.getLast().section.remove(2);
 
-        page.removeAllComponents();
-
-        page.meta.setDescription("Hello");
-        page.meta.addStylesheet();
-        page.meta.setTitle("New title");
+        page.metadata.setDescription("Hello");
+        page.metadata.addStylesheet();
+        page.metadata.setTitle("New title");
 
         page.feature.addCopyright();
 

@@ -1,6 +1,6 @@
-package website;
+package webplate;
 
-import website.page.Page;
+import webplate.page.Page;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,3 @@
-package website.list;
-
-import java.util.ArrayList;
+package webplate.list;
 
 public class FieldList<E> extends ExtendedList<E> {}
