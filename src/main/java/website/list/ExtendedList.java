@@ -8,6 +8,8 @@ public abstract class ExtendedList<E> extends ArrayList<E> {
         remove(size()-1);
     }
 
+    public void removeAll() { this.clear();}
+
     public E getLast() {
         return this.get(size()-1);
     }
@@ -15,5 +17,4 @@ public abstract class ExtendedList<E> extends ArrayList<E> {
     public E getFirst() {
         return this.get(0);
     }
-
 }

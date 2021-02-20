@@ -19,6 +19,9 @@ public class Program {
         page.schema.getLast().fieldset.getLast();
         page.schema.getLast().fieldset.get(2).field.getLast().add("Number", true);
         page.schema.get(2).fieldset.get(2).field.get(2).add("Email");
+        page.schema.getFirst().fieldset.getFirst().field.removeAll();
+        page.schema.getFirst().fieldset.removeAll();
+        page.schema.removeAll();
 
         page.article.add();
         page.article.add(2);
@@ -28,6 +31,8 @@ public class Program {
         page.article.getLast().section.add(2);
         page.article.getLast().section.removeLast();
         page.article.getLast().section.remove(2);
+
+        page.removeAllComponents();
 
         page.meta.setDescription("Hello");
         page.meta.addStylesheet();

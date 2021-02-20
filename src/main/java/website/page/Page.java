@@ -20,6 +20,6 @@ public class Page  {
         meta.setTitle(title);
     }
 
-
-
+    public void removeAllComponents() {
+    }
 }
