@@ -1,8 +1,9 @@
 package webplate.config;
 
+import webplate.list.SchemaList;
 import webplate.page.component.Schema;
 
-public class SchemaPropertyConfig {
+public class SchemaConfig extends ComponentConfig<SchemaList> {
 
     private Schema schema;
 
@@ -16,5 +17,15 @@ public class SchemaPropertyConfig {
 
     public boolean listUnlocked() {
         return schema.config.isCustomizable();
+    }
+
+    @Override
+    public void setList(SchemaList list) {
+        this.list = list;
+    }
+
+    @Override
+    public SchemaList getList() {
+        return list;
     }
 }

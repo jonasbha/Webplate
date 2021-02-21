@@ -1,18 +1,18 @@
 package webplate.list;
 
-import webplate.config.SchemaPropertyConfig;
+import webplate.config.SchemaConfig;
 import webplate.exception.ExceptionFactory;
 import webplate.page.component.property.FieldSet;
 
-public class FieldsetList extends ExtendedList<FieldSet> {
+public class FieldsetList extends CustomArrayList<FieldSet> {
 
-    public SchemaPropertyConfig config = new SchemaPropertyConfig();
+    public SchemaConfig config = new SchemaConfig();
 
     public void add() {
         if (config.listUnlocked()) {
             FieldSet fieldSet = new FieldSet();
             fieldSet.field.config.setSchema(config.getSchema());
-            this.add(fieldSet);
+            this.addToRear(fieldSet);
         } else
             new ExceptionFactory().notCustomizable();
     }
@@ -22,7 +22,7 @@ public class FieldsetList extends ExtendedList<FieldSet> {
             for (int i = 0; i < fieldsets; i++) {
                 FieldSet fieldSet = new FieldSet();
                 fieldSet.field.config.setSchema(config.getSchema());
-                this.add(fieldSet);
+                this.addToRear(fieldSet);
             }
         } else
             new ExceptionFactory().notCustomizable();

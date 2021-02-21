@@ -1,6 +1,12 @@
 package webplate.config;
 
-public class ComponentConfig {
+public abstract class ComponentConfig<E> {
+
+    public E list;
+
+    abstract public void setList(E list);
+
+    abstract public E getList();
 
     private boolean defaultStructure;
 
@@ -16,6 +22,10 @@ public class ComponentConfig {
 
     public boolean isCustomizable() {
         return customizable;
+    }
+
+    public void setCustomizable(boolean customizable) {
+        this.customizable = customizable;
     }
 
     public void setDefault(boolean defaultStructure, boolean customizable) {

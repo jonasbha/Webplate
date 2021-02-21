@@ -1,6 +1,5 @@
 package webplate;
 
-import webplate.exception.ExceptionFactory;
 import webplate.page.Page;
 
 public class Program {
@@ -10,25 +9,20 @@ public class Program {
         Page page = new Page("title");
 
         page.schema.addDefault(false);
-        page.schema.getFirst().fieldset.add();
+        page.schema.getLast().fieldset.add();
 
-        System.out.println(page.components.get(0));
         page.schema.addEmpty();
-        page.schema.addDefault(3);
         page.schema.addEmpty();
-        page.schema.addEmpty(2);
         page.schema.remove(2);
         page.schema.removeLast();
 
         page.article.addDefault();
-        page.article.addEmpty(2);
-        page.article.getFirst();
+        page.article.getLast();
         page.article.removeLast();
 
         // needs to be tested:
 
-        page.schema.addDefault(2, true);
-        page.schema.addDefault(false);
+        page.schema.addDefault(true);
         page.schema.getLast().config.setDefault(false);
         page.schema.get(1).fieldset.add();
         page.schema.getLast().fieldset.add(2);
@@ -38,9 +32,9 @@ public class Program {
         page.schema.getLast().fieldset.get(2).field.add("Number", true);
         page.schema.get(2).fieldset.get(2).field.add("Email");
         page.schema.get(2).fieldset.get(2).field.add("TextField");
-        page.schema.getFirst().fieldset.getFirst().field.removeAll();
-        page.schema.getFirst().fieldset.removeAll();
-        page.schema.removeAll();
+        page.schema.getLast().fieldset.getLast().field.removeAll();
+        page.schema.getLast().fieldset.removeAll();
+        page.schema.getLast();
 
         page.article.getLast().section.add();
         page.article.getLast().section.add(2);

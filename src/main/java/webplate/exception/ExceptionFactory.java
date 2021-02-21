@@ -6,4 +6,9 @@ public class ExceptionFactory extends Exception {
         throw new IllegalStateException("This is a default schema that is not set as customizable. " +
                 "You can activate customization in the schema.");
     }
+
+
+    public void notSupported() {
+        throw new UnsupportedOperationException();
+    }
 }
