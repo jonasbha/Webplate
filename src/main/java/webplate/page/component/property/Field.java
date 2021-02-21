@@ -5,7 +5,19 @@ public class Field {
     String type;
     boolean required;
 
-    public void add(String type) {}
+    public String getType() {
+        return type;
+    }
 
-    public void add(String type, boolean required) {}
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public boolean isRequired() {
+        return required;
+    }
+
+    public void setRequired(boolean required) {
+        this.required = required;
+    }
 }

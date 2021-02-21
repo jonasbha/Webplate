@@ -1,12 +1,12 @@
 package webplate.list;
 
-import webplate.config.ListConfig;
+import webplate.config.ListComponentConfig;
 
 import java.util.ArrayList;
 
 public abstract class ExtendedList<E> extends ArrayList<E> {
 
-    public ListConfig config = new ListConfig();
+    public ListComponentConfig config = new ListComponentConfig();
 
     public void removeLast() {
         remove(size()-1);

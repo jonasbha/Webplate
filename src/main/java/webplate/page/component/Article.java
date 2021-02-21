@@ -1,11 +1,11 @@
 package webplate.page.component;
 
-import webplate.config.ArticleConfig;
+import webplate.config.ComponentConfig;
 import webplate.page.component.property.Section;
 
 
 public class Article extends Component {
 
     public Section section;
-    public ArticleConfig config = new ArticleConfig();
+    public ComponentConfig config = new ComponentConfig();
 }

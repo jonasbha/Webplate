@@ -2,7 +2,7 @@ package webplate.config;
 
 import webplate.page.Page;
 
-public class ListConfig {
+public class ListComponentConfig {
 
     private Page parent;
 

@@ -4,5 +4,5 @@ import webplate.list.FieldList;
 
 public class FieldSet {
 
-    public FieldList<Field> field = new FieldList<>();
+    public FieldList field = new FieldList();
 }
