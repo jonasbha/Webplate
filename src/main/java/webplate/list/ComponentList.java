@@ -1,6 +1,6 @@
 package webplate.list;
 
-import webplate.config.PageConfig;
+import webplate.page.PageConfig;
 
 public abstract class ComponentList<T> extends ListNamingAbstraction<T> {
 
@@ -10,14 +10,9 @@ public abstract class ComponentList<T> extends ListNamingAbstraction<T> {
 
     abstract public void addDefault();
 
-    @Override
-    public void removeLast() {
-        removeLastItem();
-        config.getParent().config.getComponents().remove(config.getParent().config.getComponents().size()-1);
-    }
-    @Override
-    public void removeAll() {
-        removeAllItems();
-        config.getParent().config.getComponents().clear();
-    }
+    abstract public void addDefault(boolean customizable);
+
+    abstract public void removeAll();
+
+    abstract public void removeLast();
 }

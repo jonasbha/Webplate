@@ -8,19 +8,9 @@ public class Program {
         // alle cases testes senere
         Page page = new Page("title");
 
-        page.schema.addDefault(false);
-        page.schema.getLast().fieldset.add();
-
         page.schema.addEmpty();
         page.schema.addEmpty();
         page.schema.removeLast();
-
-        page.article.addDefault();
-        page.article.getLast();
-        page.article.removeLast();
-
-        // needs to be tested:
-
         page.schema.addDefault(true);
         page.schema.getLast().config.setDefault(false);
         page.schema.getLast().fieldset.add();
@@ -35,6 +25,9 @@ public class Program {
         page.schema.getLast().fieldset.removeAll();
         page.schema.getLast();
 
+        page.article.addDefault();
+        page.article.getLast();
+        page.article.removeLast();
         page.article.getLast().section.add();
         page.article.getLast().section.add(2);
         page.article.getArticle(2).section.add();

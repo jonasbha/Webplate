@@ -1,6 +1,5 @@
 package webplate.page;
 
-import webplate.config.PageConfig;
 import webplate.list.ArticleList;
 import webplate.list.SchemaList;
 import webplate.page.feature.Feature;
@@ -15,9 +14,9 @@ public class Page  {
 
     public Page(String title) {
         metadata.setTitle(title);
-        schema.config.setParent(this);
-        article.config.setParent(this);
-        config.setParent(this);
+        schema.config.parent = this;
+        article.config.parent = this;
+        config.parent = this;
     }
 
     public Page(String title, String description) {

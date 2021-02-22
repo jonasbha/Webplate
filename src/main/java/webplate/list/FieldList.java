@@ -1,6 +1,6 @@
 package webplate.list;
 
-import webplate.config.SchemaConfig;
+import webplate.page.component.SchemaConfig;
 import webplate.exception.ExceptionFactory;
 import webplate.page.component.property.Field;
 

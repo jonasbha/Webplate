@@ -52,20 +52,22 @@ public class Testing_list_functionality {
 
     @Test
     public void customizable_is_false_as_default_when_creating_default_component() {
-        page.schema.addDefault();
-        Assertions.assertThrows(IllegalStateException.class, () -> page.schema.getLast().fieldset.add());
+        page.article.addDefault();
+        Assertions.assertThrows(IllegalStateException.class, () -> page.article.getLast().section.add());
     }
 
 
     @Test
-    public void removeLast_removes_components_in_all_associated_lists() {
+    public void removeLast_removes_the_last_element_in_all_associated_lists() {
+        page.schema.addEmpty();
         page.schema.addDefault();
         page.article.addEmpty();
-        page.schema.addDefault();
+
         page.schema.removeLast();
 
         Assertions.assertEquals(1, page.schema.size());
         Assertions.assertEquals(2, page.config.getComponents().size());
+        Assertions.assertEquals(Article.class, page.config.getComponents().get(page.config.getComponents().size()-1).getClass());
     }
 
     @Test
@@ -73,6 +75,7 @@ public class Testing_list_functionality {
         page.schema.addDefault();
         page.article.addEmpty();
         page.schema.addDefault();
+
         page.schema.removeAll();
 
         Assertions.assertEquals(0, page.schema.size());
@@ -80,12 +83,7 @@ public class Testing_list_functionality {
     }
 
     /*
-
     add descriptions like in the list.
-    add customizable to article
-    test addToBottomofPage
-    move config to respective packages to avoid unnecessary config variables.
-    pass tests.
 
     fortsett med testing:
     page.article.get(2).section.add();

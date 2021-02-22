@@ -1,16 +1,15 @@
 package webplate.page.component;
 
-import webplate.config.ArticleConfig;
 import webplate.page.component.property.Section;
 
 
 public class Article extends Component {
 
     public ArticleConfig config = new ArticleConfig();
-    public Section section;
+    public Section section = new Section(this);
 
     public Article() {
         super();
-        config.setArticle(this);
+        config.article = this;
     }
 }
