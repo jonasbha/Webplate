@@ -4,7 +4,7 @@ public class Section {
 
     private int value;
 
-    public int size() {return 0;}
+    public int size() { return value; }
 
     public void add() {}
 

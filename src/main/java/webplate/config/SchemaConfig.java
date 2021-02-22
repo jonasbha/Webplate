@@ -15,10 +15,6 @@ public class SchemaConfig extends ComponentConfig<SchemaList> {
         return schema;
     }
 
-    public boolean listUnlocked() {
-        return schema.config.isCustomizable();
-    }
-
     @Override
     public void setList(SchemaList list) {
         this.list = list;
@@ -27,5 +23,16 @@ public class SchemaConfig extends ComponentConfig<SchemaList> {
     @Override
     public SchemaList getList() {
         return list;
+    }
+
+    @Override
+    public boolean isCustomizable() {
+        return schema.config.customizable;
+    }
+
+    @Override
+    public void addToBottomOfPage() {
+        list.config.getParent().config.components.remove(schema);
+        list.config.getParent().config.components.add(schema);
     }
 }

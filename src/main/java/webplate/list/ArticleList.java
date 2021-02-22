@@ -10,7 +10,7 @@ public class ArticleList extends ComponentList<Article> {
         Article article = new Article();
         article.config.setList(this);
         article.config.setDefault(false);
-        article.initializePosition();
+        article.config.addToBottomOfPage();
         this.addToRear(article);
     }
 
@@ -19,8 +19,13 @@ public class ArticleList extends ComponentList<Article> {
         Article article = new Article();
         article.config.setList(this);
         article.config.setDefault(true);
-        article.initializePosition();
+        article.config.addToBottomOfPage();
         this.addToRear(article);
+    }
+
+    public Article getArticle(int index)
+    {
+        return get(index);
     }
 
 }

@@ -1,8 +1,9 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import webplate.page.Page;
+import webplate.page.component.Article;
+import webplate.page.component.Schema;
 
 public class Testing_list_functionality {
 
@@ -13,23 +14,15 @@ public class Testing_list_functionality {
         page = new Page("title");
     }
 
-    @AfterEach
-    public void resetOrderOfComponents() {
-        for (int i = 0; i < page.schema.config.getPosition(); i++)
-        page.schema.config.decrementPosition();
-    }
-
     @Test
     public void components_are_added_in_correct_order() {
-        page.schema.addDefault();
         page.article.addEmpty();
         page.schema.addEmpty();
         page.article.addDefault();
 
-        Assertions.assertEquals(1, page.schema.get(0).getPosition());
-        Assertions.assertEquals(2, page.article.get(0).getPosition());
-        Assertions.assertEquals(3, page.schema.getLast().getPosition());
-        Assertions.assertEquals(4, page.article.getLast().getPosition());
+        Assertions.assertEquals(Article.class, page.config.getComponents().get(0).getClass());
+        Assertions.assertEquals(Schema.class, page.config.getComponents().get(1).getClass());
+        Assertions.assertEquals(Article.class, page.config.getComponents().get(2).getClass());
     }
 
     @Test
@@ -37,23 +30,23 @@ public class Testing_list_functionality {
         page.article.addDefault();
         page.schema.addEmpty();
 
-        Assertions.assertFalse(page.schema.get(0).config.isDefault());
-        Assertions.assertTrue(page.article.get(0).config.isDefault());
+        Assertions.assertFalse(page.schema.getLast().config.isDefault());
+        Assertions.assertTrue(page.article.getArticle(0).config.isDefault());
     }
 
     @Test
     public void exception_occurs_when_customizing_a_non_customizable_default_component() {
         page.schema.addDefault(false);
 
-        Assertions.assertThrows(IllegalStateException.class, () -> page.schema.get(0).fieldset.add());
-        Assertions.assertEquals(0, page.schema.get(0).fieldset.size());
+        Assertions.assertThrows(IllegalStateException.class, () -> page.schema.getLast().fieldset.add());
+        Assertions.assertEquals(0, page.schema.getLast().fieldset.size());
     }
 
     @Test
     public void exception_do_not_occur_when_customizing_a_customizable_default_component() {
         page.schema.addDefault(true);
         page.schema.addDefault(true);
-        page.schema.get(1).fieldset.add();
+        page.schema.getLast().fieldset.add();
         Assertions.assertEquals(1, page.schema.getLast().fieldset.size());
     }
 
@@ -65,19 +58,38 @@ public class Testing_list_functionality {
 
 
     @Test
-    public void component_order_is_reset_after_removeAll() {
+    public void removeLast_removes_components_in_all_associated_lists() {
         page.schema.addDefault();
-        page.article.addDefault();
-        page.schema.addEmpty();
+        page.article.addEmpty();
+        page.schema.addDefault();
+        page.schema.removeLast();
 
-        Assertions.assertEquals(1, page.schema.config.getPosition());
+        Assertions.assertEquals(1, page.schema.size());
+        Assertions.assertEquals(2, page.config.getComponents().size());
+    }
+
+    @Test
+    public void removeAll_removes_components_in_all_associated_lists() {
+        page.schema.addDefault();
+        page.article.addEmpty();
+        page.schema.addDefault();
+        page.schema.removeAll();
+
+        Assertions.assertEquals(0, page.schema.size());
+        Assertions.assertEquals(1, page.config.getComponents().size());
     }
 
     /*
-    Trade static counter for componentlist
-    integrate component in arraylist
-    remove unneccesary functions from api like getPosition
-    find new list exceptions
+
+    add descriptions like in the list.
+    add customizable to article
+    test addToBottomofPage
+    move config to respective packages to avoid unnecessary config variables.
+    pass tests.
+
+    fortsett med testing:
+    page.article.get(2).section.add();
+    removeAll
     page.article.removeLast();
     page.schema.remove(2);
 

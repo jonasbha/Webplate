@@ -1,6 +1,7 @@
 package webplate.list;
 
-import webplate.list.core.exceptions.EmptyCollectionException;
+import webplate.exception.EmptyCollectionException;
+import webplate.page.component.Article;
 
 import java.util.Arrays;
 
@@ -51,23 +52,7 @@ public class CustomArrayList<T>
         list = Arrays.copyOf(list, list.length*2);
     }
 
-    /**
-     * Returns a reference to the element at the specified index in this list.
-     * The element is not removed from the list. Throws an
-     * EmptyCollectionException if the list is empty.
-     *
-     * @return a reference to the element at the specified index in this list
-     * @throws EmptyCollectionException if the list is empty
-     */
-    public T get(int index) throws EmptyCollectionException
-    {
-        if (isEmpty())
-            throw new EmptyCollectionException("ArrayList");
-
-        return list[index];
-    }
-
-    public void removeAll() {
+    protected void removeAllItems() {
 
         if (isEmpty())
             throw new EmptyCollectionException("ArrayList");
@@ -84,7 +69,7 @@ public class CustomArrayList<T>
      *
      * @throws EmptyCollectionException if the element is not in the list
      */
-    public void removeLast() throws EmptyCollectionException
+    protected void removeLastItem() throws EmptyCollectionException
     {
         if (isEmpty())
             throw new EmptyCollectionException("ArrayList");
@@ -93,25 +78,6 @@ public class CustomArrayList<T>
         list[rear] = null;
         modCount++;
     }
-
-    /**
-     * Removes element at the specified index in this list.
-     *
-     * @throws EmptyCollectionException if the element is not in the list
-     */
-    public void remove(int index) throws EmptyCollectionException
-    {
-        if (isEmpty())
-            throw new EmptyCollectionException("ArrayList");
-
-        rear--;
-        for (int scan=index; scan < rear; scan++)
-            list[scan] = list[scan+1];
-
-        list[rear] = null;
-        modCount++;
-    }
-
 
     /**
      * Returns a reference to the element at the rear of this list.
@@ -129,38 +95,12 @@ public class CustomArrayList<T>
         return list[rear-1];
     }
 
-    /**
-     * Returns true if this list contains the specified element.
-     *
-     * @param target the target element
-     * @return true if the target is in the list, false otherwise
-     */
-    public boolean contains(T target)
+    protected T get(int index) throws EmptyCollectionException
     {
-        return (find(target) != NOT_FOUND);
-    }
+        if (isEmpty())
+            throw new EmptyCollectionException("ArrayList");
 
-    /**
-     * Returns the array index of the specified element, or the
-     * constant NOT_FOUND if it is not found.
-     *
-     * @param target the target element
-     * @return the index of the target element, or the
-     *         NOT_FOUND constant
-     */
-    private int find(T target)
-    {
-        int scan = 0;
-        int result = NOT_FOUND;
-
-        if (!isEmpty())
-            while (result == NOT_FOUND && scan < rear)
-                if (target.equals(list[scan]))
-                    result = scan;
-                else
-                    scan++;
-
-        return result;
+        return list[index];
     }
 
     /**
@@ -168,7 +108,7 @@ public class CustomArrayList<T>
      *
      * @return true if the list is empty, false otherwise
      */
-    private boolean isEmpty()
+    protected boolean isEmpty()
     {
         return (rear == 0);
     }

@@ -1,4 +1,4 @@
-package webplate.list.core.exceptions;
+package webplate.exception;
 
 /**
  * Represents the situation in which a collection is empty.

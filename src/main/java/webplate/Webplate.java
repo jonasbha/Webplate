@@ -41,7 +41,7 @@ public class Webplate {
                 for (int b = 0; b < page.article.size(); b++) {
 
                     builder.append("<article></article>");
-                    for (int j = 0; j < page.article.get(b).section.size(); j++) {
+                    for (int j = 0; j < page.article.getArticle(b).section.size(); j++) {
                         builder.append("<section></section>");
                     }
                 }

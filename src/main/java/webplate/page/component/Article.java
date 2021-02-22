@@ -11,11 +11,6 @@ public class Article extends Component {
 
     public Article() {
         super();
-    }
-
-    //refactorable?
-    public void initializePosition() {
-        this.setPosition(config.getList().config.getPosition());
-        config.getList().config.incrementPosition();
+        config.setArticle(this);
     }
 }

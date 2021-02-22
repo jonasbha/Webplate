@@ -11,10 +11,6 @@ public class Schema extends Component {
     public Schema() {
         super();
         fieldset.config.setSchema(this);
-    }
-
-    public void initializePosition() {
-        this.setPosition(config.getList().config.getPosition());
-        config.getList().config.incrementPosition();
+        config.setSchema(this);
     }
 }

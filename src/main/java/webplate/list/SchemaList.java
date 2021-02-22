@@ -9,7 +9,7 @@ public class SchemaList extends ComponentList<Schema> {
         Schema schema = new Schema();
         schema.config.setList(this);
         schema.config.setDefault(false);
-        schema.initializePosition();
+        schema.config.addToBottomOfPage();
         this.addToRear(schema);
     }
 
@@ -18,7 +18,7 @@ public class SchemaList extends ComponentList<Schema> {
         Schema schema = new Schema();
         schema.config.setList(this);
         schema.config.setDefault(true);
-        schema.initializePosition();
+        schema.config.addToBottomOfPage();
         this.addToRear(schema);
     }
 
@@ -27,7 +27,7 @@ public class SchemaList extends ComponentList<Schema> {
         schema.config.setList(this);
         schema.config.setDefault(true);
         schema.config.setCustomizable(customizable);
-        schema.initializePosition();
+        schema.config.addToBottomOfPage();
         this.addToRear(schema);
     }
 

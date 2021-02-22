@@ -13,7 +13,6 @@ public class Program {
 
         page.schema.addEmpty();
         page.schema.addEmpty();
-        page.schema.remove(2);
         page.schema.removeLast();
 
         page.article.addDefault();
@@ -24,20 +23,21 @@ public class Program {
 
         page.schema.addDefault(true);
         page.schema.getLast().config.setDefault(false);
-        page.schema.get(1).fieldset.add();
+        page.schema.getLast().fieldset.add();
         page.schema.getLast().fieldset.add(2);
-        page.schema.getLast().fieldset.remove(2);
+        page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.getLast();
-        page.schema.getLast().fieldset.get(2).field.add("Number", true);
-        page.schema.get(2).fieldset.get(2).field.add("Email");
-        page.schema.get(2).fieldset.get(2).field.add("TextField");
+        page.schema.getLast().fieldset.getLast().field.add("Number", true);
+        page.schema.getLast().fieldset.getLast().field.add("Email");
+        page.schema.getLast().fieldset.getLast().field.add("TextField");
         page.schema.getLast().fieldset.getLast().field.removeAll();
         page.schema.getLast().fieldset.removeAll();
         page.schema.getLast();
 
         page.article.getLast().section.add();
         page.article.getLast().section.add(2);
+        page.article.getArticle(2).section.add();
         page.article.getLast().section.removeLast();
         page.article.getLast().section.remove(2);
 
