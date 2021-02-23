@@ -1,26 +1,19 @@
 package webplate.list;
 
 import webplate.exception.EmptyCollectionException;
-import webplate.page.component.Article;
 
 import java.util.Arrays;
 
 /**
  * ArrayList represents an array implementation of a list. The front of
- * the list is kept at array index 0. This class will be extended
- * to create a specific kind of list.
- *
- * @author Lewis and Chase
- * @version 4.0
+ * the list is kept at array index 0.
  */
 public class CustomArrayList<T>
 {
     private final static int DEFAULT_CAPACITY = 100;
-    private final static int NOT_FOUND = -1;
 
     protected int rear;
     protected T[] list;
-    protected int modCount;
 
     /**
      * Creates an empty list using the default capacity.
@@ -39,7 +32,6 @@ public class CustomArrayList<T>
     {
         rear = 0;
         list = (T[])(new Object[initialCapacity]);
-        modCount = 0;
     }
 
     /**
@@ -60,7 +52,6 @@ public class CustomArrayList<T>
         while (!isEmpty()) {
             rear--;
             list[rear] = null;
-            modCount++;
         }
     }
 
@@ -76,7 +67,6 @@ public class CustomArrayList<T>
 
         rear--;
         list[rear] = null;
-        modCount++;
     }
 
     /**
@@ -150,6 +140,5 @@ public class CustomArrayList<T>
 
         list[rear] = element;
         rear++;
-        modCount++;
     }
 }

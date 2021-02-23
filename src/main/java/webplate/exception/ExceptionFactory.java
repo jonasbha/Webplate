@@ -1,7 +1,5 @@
 package webplate.exception;
 
-import java.util.NoSuchElementException;
-
 public class ExceptionFactory extends Exception {
 
     public void notCustomizable(String component) {
