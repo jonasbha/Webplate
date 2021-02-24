@@ -9,7 +9,7 @@ See: [description](#description)
 ---
 | Class | Description |
 | --- | --- |
-| - [`Page`](#program) | The class represents the page of the website. |
+| - [`Page`]() | The class represents the page of the website. |
 
     
 ### Description
