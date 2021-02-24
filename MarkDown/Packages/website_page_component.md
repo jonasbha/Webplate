@@ -1,4 +1,4 @@
-# website.page.component
+# webplate.page.component
 ---
 
 - Provides the classes for each single component that can be added to a page.

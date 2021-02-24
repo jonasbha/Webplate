@@ -1,4 +1,4 @@
-package website.page.feature;
+package webplate.page.feature;
 
 public class Copyright extends Feature {
 

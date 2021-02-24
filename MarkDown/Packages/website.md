@@ -1,4 +1,4 @@
-# website 
+# webplate 
 ---
 
 - Provides the classes that are responsible for the fundamental configuration
@@ -17,7 +17,7 @@ See: [description](#description)
 | Class | Description |
 | --- | --- |
 | - [`Program`](#program) | TEST |
-| - [`Webplate`](#webplate) | The class for the fundamental configuration of each page that is part of the website |
+| - [`Webplate`](#webplate) | The class for the fundamental configuration of each page that is part of the webplate |
 
     
 ### Description

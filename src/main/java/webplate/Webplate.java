@@ -1,13 +1,13 @@
-package website;
+package webplate;
 
-import website.page.Page;
+import webplate.page.Page;
 
 import java.util.ArrayList;
 
 public class Webplate {
 
     public static class html {
-        private String language;
+        private static String language;
         private static ArrayList<Page> pages;
 
 
@@ -23,21 +23,29 @@ public class Webplate {
 
         }
 
+        public static void setLanguage(String language) {
+            html.language = language;
+        }
+
+        public static String getLanguage() {
+            return language;
+        }
 
         public static void create() {
             StringBuilder builder = new StringBuilder();
 
-            for (int a = 0; a < pages.get(a).articles.getArticles(); a++) {
+            for (Page page : pages) {
 
-                builder.append("<head><head/>")
-                        .append("<header></header>.... osv");
-                for (int i = 0; i < pages.get(a).articles.getArticles(); i++) {
+                builder.append("<head><head/>\n")
+                        .append("<body>");
+                for (int b = 0; b < page.article.size(); b++) {
 
                     builder.append("<article></article>");
-                    for (int j = 0; j < pages.get(a).articles.get(i).sections; j++) {
+                    for (int j = 0; j < page.article.getArticle(b).section.size(); j++) {
                         builder.append("<section></section>");
                     }
                 }
+                builder.append("</body>... osv");
             }
 
 
