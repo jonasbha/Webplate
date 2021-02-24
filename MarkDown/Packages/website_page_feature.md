@@ -7,8 +7,8 @@
 ---
 | Classes | Description |
 |---|---|
-|- [`Copyright`]()|  |
-|- [`Feature`]()|  |
+|- [`Copyright`](../Classes/copyright.md)| Contains the values for copyright |
+|- [`Feature`](../Classes/feature.md)| Contains the contents for defining a feature |
 
 ### Description
 

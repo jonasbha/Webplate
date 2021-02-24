@@ -9,8 +9,9 @@ See: [description](#description)
 ---
 | Class | Description |
 | --- | --- |
-| - [`Page`]() | The class represents the page of the website. |
-
+| - [`Metadata`](../Classes/metadata.md) | Contains information for the head section within a html page |
+| - [`Page`](../Classes/page.md) | The class represents the page of the website. |
+| - [`PageConfig`](../Classes/pageconfig.md) | Contains page for template usage |
     
 ### Description
 

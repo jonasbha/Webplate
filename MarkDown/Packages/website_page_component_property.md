@@ -7,9 +7,9 @@
 ---
 | Classes | Description |
 |---|---|
-|- [`Field`]()|  |
-|- [`FieldSet`]()|  |
-|- [`Section`]()|  | 
+|- [`Field`](../Classes/field.md)| Contains values regarding field elements |
+|- [`FieldSet`](../Classes/fieldset.md)| Contains values regarding fieldset elements |
+|- [`Section`](../Classes/section.md)| Contains values regarding section elements | 
 
 ### Description
 

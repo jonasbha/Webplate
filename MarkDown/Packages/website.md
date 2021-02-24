@@ -5,19 +5,13 @@
 
 See: [description](#description)
 
-#### Interfaces
----
-| Interface | Description |
-| ---|---|
-| - [`HTML`](#html) | An interface responsible for generating HTML out of classes |
-    
     
 #### Classes
 ---
 | Class | Description |
 | --- | --- |
-| - [`Program`](#program) | TEST |
-| - [`Webplate`](#webplate) | The class for the fundamental configuration of each page that is part of the webplate |
+| - [`Program`](../Classes/program.md) | TEST |
+| - [`Webplate`](../Classes/webplate.md) | The class for the fundamental configuration of each page that is part of the webplate |
 
     
 ### Description
