@@ -1,6 +1,7 @@
 package webplate;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import webplate.page.Page;
 
@@ -13,29 +14,37 @@ import java.util.Objects;
 
 public class Testing_generation_of_HTML {
 
-    @Test
-    public void see_string() {
-        Page page = new Page("Title");
-        page.article.addDefault();
+    Page page;
 
-        Webplate.pages.add(page);
-        System.out.println(Webplate.html.create());
+    @BeforeEach
+    public void initPage() {
+        page = new Page("Title");
     }
 
     @Test
-    public void verify_html_of_default_template() throws IOException, URISyntaxException {
-        Page page = new Page("Title");
+    public void verify_html_of_default_article_template() throws IOException, URISyntaxException {
         page.article.addDefault();
         Webplate.pages.add(page);
 
-        String expected = getDefaultArticle();
-        String actual = Webplate.html.create();
+        String expected = getHtml("defaultArticle.html");
+        String actual = new HtmlGenerator().generatePage(0);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    private String getDefaultArticle() throws URISyntaxException, IOException {
-        Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader().getResource("defaultArticle.html")).toURI());
+    @Test
+    public void verify_html_of_default_schema_template() throws IOException, URISyntaxException {
+        page.schema.addDefault();
+        Webplate.pages.add(page);
+
+        String expected = getHtml("defaultSchema.html");
+        String actual = new HtmlGenerator().generatePage(0);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    private String getHtml(String resource) throws URISyntaxException, IOException {
+        Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader().getResource(resource)).toURI());
         byte[] fileBytes = Files.readAllBytes(path);
         String expected = new String(fileBytes);
         expected = expected.replaceAll("\\r\\n", "\n");

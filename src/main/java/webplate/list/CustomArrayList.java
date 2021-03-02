@@ -85,7 +85,7 @@ public class CustomArrayList<T>
         return list[rear-1];
     }
 
-    protected T get(int index) throws EmptyCollectionException
+    public T get(int index) throws EmptyCollectionException
     {
         if (isEmpty())
             throw new EmptyCollectionException("ArrayList");

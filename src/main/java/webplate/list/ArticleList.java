@@ -35,11 +35,6 @@ public class ArticleList extends ComponentList<Article> {
         this.addToRear(article);
     }
 
-    public Article getArticle(int index)
-    {
-        return get(index);
-    }
-
     @Override
     public void removeAll() {
         removeAllItems();

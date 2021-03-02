@@ -38,10 +38,10 @@ public class Program {
         page.article.addDefault(true);
         page.article.getLast();
         page.article.removeLast();
-        page.article.getArticle(2);
+        page.article.get(2);
         page.article.getLast().section.add();
         page.article.getLast().section.add(2);
-        page.article.getArticle(2).section.add();
+        page.article.get(2).section.add();
         page.article.getLast().section.removeLast();
         page.article.getLast().section.removeAll();
 

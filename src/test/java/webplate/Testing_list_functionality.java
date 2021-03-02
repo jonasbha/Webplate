@@ -118,9 +118,9 @@ public class Testing_list_functionality {
         page.article.addEmpty();
         page.article.addEmpty();
         page.article.addEmpty();
-        page.article.getArticle(1).section.add();
+        page.article.get(1).section.add();
 
-        Assertions.assertEquals(1, page.article.getArticle(1).section.size());
+        Assertions.assertEquals(1, page.article.get(1).section.size());
     }
 
     @Test

@@ -22,8 +22,10 @@ public class Webplate {
 
         public void deleteAllFiles() {} //?
 
-        public static String create() {
-            return new Generator().generateHTML();
+        public static void create() {
+            FileHandler fg = new FileHandler();
+            for (int i = 0; i < pages.size(); i++)
+                fg.create(new HtmlGenerator().generatePage(0));
         }
     }
 
