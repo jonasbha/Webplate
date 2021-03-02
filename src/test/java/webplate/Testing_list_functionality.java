@@ -3,7 +3,6 @@ package webplate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import webplate.Webplate;
 import webplate.page.Page;
 import webplate.page.component.Article;
 import webplate.page.component.Schema;
@@ -154,10 +153,10 @@ public class Testing_list_functionality {
     @Test
     public void pages_can_be_added_and_removed_from_Webplate() {
         Page page2 = new Page("title");
-        Webplate.addPage(page);
-        Webplate.addPage(page2);
-        Webplate.removePage(page2);
+        Webplate.pages.add(page);
+        Webplate.pages.add(page2);
+        Webplate.pages.remove(page2);
 
-        Assertions.assertEquals(1, Webplate.size());
+        Assertions.assertEquals(1, Webplate.pages.size());
     }
 }

@@ -18,7 +18,7 @@ public class Testing_generation_of_HTML {
         Page page = new Page("Title");
         page.article.addDefault();
 
-        Webplate.addPage(page);
+        Webplate.pages.add(page);
         System.out.println(Webplate.html.create());
     }
 
@@ -26,7 +26,7 @@ public class Testing_generation_of_HTML {
     public void verify_html_of_default_template() throws IOException, URISyntaxException {
         Page page = new Page("Title");
         page.article.addDefault();
-        Webplate.addPage(page);
+        Webplate.pages.add(page);
 
         String expected = getDefaultArticle();
         String actual = Webplate.html.create();

@@ -52,7 +52,7 @@ public class Program {
         page.feature.addCopyright();
 
         Webplate.html.create();
-        Webplate.addPage(page);
+        Webplate.pages.add(page);
         Webplate.html.setLanguage("nb");
 
     }
