@@ -13,7 +13,7 @@ public class ArticleConfig extends ComponentConfig<ArticleList> {
 
     @Override
     public boolean isCustomizable() {
-        return false;
+        return customizable;
     }
 
     @Override

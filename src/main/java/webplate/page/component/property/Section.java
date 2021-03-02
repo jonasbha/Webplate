@@ -21,11 +21,16 @@ public class Section {
             new ExceptionFactory().notCustomizable("article");
     }
 
-    public void add(int sections) {}
+    public void add(int sections) {
+        value += sections;
+    }
 
-    public void remove(int index) {}
+    public void removeLast() {
+        value--;
+    }
 
-    public void removeLast() {}
-
+    public void removeAll() {
+        value = 0;
+    }
 }
 

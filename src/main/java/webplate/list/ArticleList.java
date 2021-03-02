@@ -10,7 +10,7 @@ public class ArticleList extends ComponentList<Article> {
     public void addEmpty() {
         Article article = new Article();
         article.config.setList(this);
-        article.config.setDefault(false);
+        article.config.setCustomizable(true);
         article.config.addToBottomOfPage();
         this.addToRear(article);
     }
@@ -18,8 +18,9 @@ public class ArticleList extends ComponentList<Article> {
     @Override
     public void addDefault() {
         Article article = new Article();
+        article.section.add(2);
+        article.config.setCustomizable(false);
         article.config.setList(this);
-        article.config.setDefault(true);
         article.config.addToBottomOfPage();
         this.addToRear(article);
     }
@@ -27,8 +28,8 @@ public class ArticleList extends ComponentList<Article> {
     @Override
     public void addDefault(boolean customizable) {
         Article article = new Article();
+        article.section.add(2);
         article.config.setList(this);
-        article.config.setDefault(true);
         article.config.setCustomizable(customizable);
         article.config.addToBottomOfPage();
         this.addToRear(article);

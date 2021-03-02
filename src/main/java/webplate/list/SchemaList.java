@@ -9,7 +9,7 @@ public class SchemaList extends ComponentList<Schema> {
     public void addEmpty() {
         Schema schema = new Schema();
         schema.config.setList(this);
-        schema.config.setDefault(false);
+        schema.config.setCustomizable(true);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
     }
@@ -17,8 +17,13 @@ public class SchemaList extends ComponentList<Schema> {
     @Override
     public void addDefault() {
         Schema schema = new Schema();
+        schema.fieldset.add(2);
+        schema.fieldset.get(0).field.add("insert field name here", true);
+        schema.fieldset.get(0).field.add("insert second field name here", false);
+        schema.fieldset.get(1).field.add("insert field name here", true);
+        schema.fieldset.get(1).field.add("insert second field name here", false);
+        schema.config.setCustomizable(false);
         schema.config.setList(this);
-        schema.config.setDefault(true);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
     }
@@ -26,8 +31,12 @@ public class SchemaList extends ComponentList<Schema> {
     @Override
     public void addDefault(boolean customizable) {
         Schema schema = new Schema();
+        schema.fieldset.add(2);
+        schema.fieldset.get(0).field.add("insert field name here", true);
+        schema.fieldset.get(0).field.add("insert second field name here", false);
+        schema.fieldset.get(1).field.add("insert field name here", true);
+        schema.fieldset.get(1).field.add("insert second field name here", false);
         schema.config.setList(this);
-        schema.config.setDefault(true);
         schema.config.setCustomizable(customizable);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
