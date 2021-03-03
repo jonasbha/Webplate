@@ -1,6 +1,5 @@
 package webplate.page;
 
-import webplate.page.Page;
 import webplate.page.component.Component;
 
 import java.util.ArrayList;

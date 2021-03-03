@@ -12,17 +12,25 @@ public class HtmlGenerator {
         Page page = Webplate.pages.get(index);
 
         generateMetadata(builder, page);
-        generateComponents(builder, page);
+        generateMain(builder, page);
 
         return builder.toString();
     }
 
-    private static void generateComponents(StringBuilder builder, Page page) {
+    private static void generateMain(StringBuilder builder, Page page) {
         builder.append("<body>\n");
         builder.append("    <header>\n");
         builder.append("        <h1> Title </h1>\n");
         builder.append("    </header>\n");
         builder.append("    <main>\n");
+        generateComponents(builder, page);
+        builder.append("    </main>\n");
+        builder.append("    <footer></footer>\n");
+        builder.append("</body>\n");
+        builder.append("</html>");
+    }
+
+    private static void generateComponents(StringBuilder builder, Page page) {
         for (int p = 0; p < page.config.getComponents().size(); p++)
             if (page.config.getComponents().get(p).getClass() == Article.class)
                 for (int a = 0; a < page.article.size(); a++) {
@@ -99,16 +107,30 @@ public class HtmlGenerator {
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
                                 }
+                                case "textarea" -> {
+                                    builder.append("                <p>\n");
+                                    builder.append("                    <label for=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    builder.append("\">\n");
+                                    builder.append("                        <span>write here: </span><br>\n");
+                                    builder.append("                    </label>\n");
+                                    builder.append("                    <textarea name=\"").
+                                            append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName()).append("\" id=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    i++;
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
+                                    builder.append("\" rows=\"10\" cols=\"50\"></textarea>\n");
+                                    if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
+                                        builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
+                                    builder.append("                </p>\n");
+                                }
                             }
                         }
                         builder.append("            </fieldset>\n");
                     }
+                    builder.append("            <br><br><input type=\"submit\">\n");
                     builder.append("        </form>\n");
                 }
-        builder.append("    </main>\n");
-        builder.append("    <footer></footer>\n");
-        builder.append("</body>\n");
-        builder.append("</html>");
     }
 
     private static void generateMetadata(StringBuilder builder, Page page) {

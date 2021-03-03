@@ -15,7 +15,13 @@ public class Program {
 
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
-        //page.article.addEmpty(2);
+        //page.schema.getLast().fieldset.add().field.add();
+        //page.schema.getLast().fieldset.getLast().field.addNumber();
+        //page.schema.getLast().fieldset.add().field.addText();
+        //page.schema.getLast().fieldset.add().field.addEmail();
+        //page.schema.getLast().fieldset.add().field.addPassword();
+        //page.schema.getLast().fieldset.add().field.addCommentField;
+
 
         page.schema.addEmpty();
         page.schema.addEmpty();
@@ -48,6 +54,7 @@ public class Program {
         page.metadata.setDescription("Hello");
         page.metadata.addStylesheet();
         page.metadata.setTitle("New title");
+        page.metadata.setLanguage("nb");
 
         page.feature.addCopyright();
 

@@ -12,6 +12,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
         if (config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
+            field.setType("text");
             this.addToRear(field);
         } else
             new ExceptionFactory().notCustomizable("schema");
@@ -21,6 +22,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
         if (config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
+            field.setType("text");
             field.setRequired(required);
             this.addToRear(field);
         } else

@@ -1,5 +1,6 @@
 package webplate;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,11 @@ public class Testing_generation_of_HTML {
         page = new Page("Title");
     }
 
+    @AfterEach
+    public void resetPage() {
+        Webplate.pages.clear();
+    }
+
     @Test
     public void verify_html_of_default_article_template() throws IOException, URISyntaxException {
         page.article.addDefault();
@@ -38,6 +44,21 @@ public class Testing_generation_of_HTML {
         Webplate.pages.add(page);
 
         String expected = getHtml("defaultSchema.html");
+        String actual = new HtmlGenerator().generatePage(0);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void verify_html_of_random_build() throws IOException, URISyntaxException {
+        page.article.addDefault(true);
+        page.article.getLast().section.add();
+        page.schema.addEmpty();
+        page.schema.getLast().fieldset.add();
+        page.schema.getLast().fieldset.getLast().field.add("username", true);
+        Webplate.pages.add(page);
+
+        String expected = getHtml("random.html");
         String actual = new HtmlGenerator().generatePage(0);
 
         Assertions.assertEquals(expected, actual);
