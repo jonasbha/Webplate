@@ -48,7 +48,7 @@ public class HtmlGenerator {
                         for (int f = 0; f < page.schema.get(sc).fieldset.get(fs).field.size(); f++) {
                             int i = 1;
                             switch (page.schema.get(sc).fieldset.get(fs).field.get(f).getType()) {
-                                case "text": {
+                                case "text" -> {
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(1);
@@ -65,7 +65,7 @@ public class HtmlGenerator {
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
                                 }
-                                case "email": {
+                                case "email" -> {
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
@@ -82,7 +82,7 @@ public class HtmlGenerator {
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
                                 }
-                                case "number": {
+                                case "number" -> {
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
