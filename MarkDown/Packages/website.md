@@ -10,8 +10,10 @@ See: [description](#description)
 ---
 | Class | Description |
 | --- | --- |
-| - [`Program`](../Classes/program.md) | TEST |
+| - [`Program`](../Classes/program.md) | An example of implementation |
 | - [`Webplate`](../Classes/webplate.md) | The class for the fundamental configuration of each page that is part of the webplate |
+| - [`FileHandler`](../Classes/filehandler.md)| The class responsible for file creation |
+| - [`HtmlGenerator`](../Classes/htmlgenerator.md)| The class which converts objects to html code |
 
     
 ### Description
