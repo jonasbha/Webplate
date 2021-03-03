@@ -56,6 +56,7 @@ public class Testing_generation_of_HTML {
         page.schema.addEmpty();
         page.schema.getLast().fieldset.add();
         page.schema.getLast().fieldset.getLast().field.add("username", true);
+        page.schema.getLast().fieldset.getLast().field.add("username", false);
         Webplate.pages.add(page);
 
         String expected = getHtml("random.html");
