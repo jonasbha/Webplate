@@ -45,39 +45,62 @@ public class HtmlGenerator {
                     for (int fs = 0; fs < page.schema.get(sc).fieldset.size(); fs++) {
                         builder.append("            <fieldset id=\"fieldset").append(fs + 1).append("\">\n");
                         builder.append("                <legend> fieldset title </legend>\n");
-                        for (int f = 0; f < page.schema.get(sc).fieldset.get(fs).field.size(); f++)
+                        for (int f = 0; f < page.schema.get(sc).fieldset.get(fs).field.size(); f++) {
+                            int i = 1;
                             switch (page.schema.get(sc).fieldset.get(fs).field.get(f).getType()) {
-                                case "text":
+                                case "text": {
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
-                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(f + 1);
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(1);
                                     builder.append("\">\n");
                                     builder.append("                        <span>name: </span>\n");
                                     builder.append("                    </label>\n");
                                     builder.append("                    <input type=\"text\" id=\"");
-                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(f + 1);
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    i++;
                                     builder.append("\" name=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
                                     builder.append("\">\n");
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
-                                case "number":
+                                }
+                                case "email": {
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
-                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(f + 1);
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
                                     builder.append("\">\n");
-                                    builder.append("                        <span>name: </span>\n");
+                                    builder.append("                        <span>email: </span>\n");
                                     builder.append("                    </label>\n");
-                                    builder.append("                    <input type=\"text\" id=\"");
-                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(f + 1);
+                                    builder.append("                    <input type=\"email\" id=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    i++;
                                     builder.append("\" name=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
                                     builder.append("\">\n");
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
+                                }
+                                case "number": {
+                                    builder.append("                <p>\n");
+                                    builder.append("                    <label for=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    builder.append("\">\n");
+                                    builder.append("                        <span>phone number: </span>\n");
+                                    builder.append("                    </label>\n");
+                                    builder.append("                    <input type=\"number\" id=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(i);
+                                    i++;
+                                    builder.append("\" name=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
+                                    builder.append("\" min=\"8\" max=\"8\">\n");
+                                    if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
+                                        builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
+                                    builder.append("                </p>\n");
+                                }
                             }
+                        }
                         builder.append("            </fieldset>\n");
                     }
                     builder.append("        </form>\n");
