@@ -1,12 +1,12 @@
 package webplate.list;
 
-import webplate.page.component.SchemaConfig;
 import webplate.exception.ExceptionFactory;
+import webplate.page.component.Schema;
 import webplate.page.component.property.Field;
 
 public class FieldList extends ListNamingAbstraction<Field> {
 
-    public SchemaConfig config = new SchemaConfig();
+    public Schema.config config = new Schema.config();
 
     public FieldList addText(String name) {
         if (config.isCustomizable()) {
