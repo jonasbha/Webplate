@@ -8,18 +8,20 @@ public class SchemaList extends ComponentList<Schema> {
 
 
     @Override
-    public void addEmpty() {
+    public Schema addEmpty() {
         Schema schema = new Schema();
         schema.config.setList(this);
         schema.config.setCustomizable(true);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
+        return schema;
     }
 
     @Override
-    public void addDefault() {
+    public Schema addDefault() {
         Schema schema = new Schema();
-        schema.fieldset.add(2);
+        schema.fieldset.add();
+        schema.fieldset.add();
         schema.fieldset.get(0).field.add("username", true);
         schema.fieldset.get(0).field.add("email", true);
         schema.fieldset.get(0).field.add("phone_number", false);
@@ -33,12 +35,14 @@ public class SchemaList extends ComponentList<Schema> {
         schema.config.setList(this);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
+        return schema;
     }
 
     @Override
-    public void addDefault(boolean customizable) {
+    public Schema addDefault(boolean customizable) {
         Schema schema = new Schema();
-        schema.fieldset.add(2);
+        schema.fieldset.add();
+        schema.fieldset.add();
         schema.fieldset.get(0).field.add("insert field name here", true);
         schema.fieldset.get(0).field.add("insert field name here", false);
         schema.fieldset.get(1).field.add("insert field name here", true);
@@ -46,6 +50,7 @@ public class SchemaList extends ComponentList<Schema> {
         schema.config.setCustomizable(customizable);
         schema.config.addToBottomOfPage();
         this.addToRear(schema);
+        return schema;
     }
 
     @Override

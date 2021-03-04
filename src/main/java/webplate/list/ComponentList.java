@@ -6,11 +6,11 @@ public abstract class ComponentList<T> extends ListNamingAbstraction<T> {
 
     public PageConfig config = new PageConfig();
 
-    abstract public void addEmpty();
+    abstract public T addEmpty();
 
-    abstract public void addDefault();
+    abstract public T addDefault();
 
-    abstract public void addDefault(boolean customizable);
+    abstract public T addDefault(boolean customizable);
 
     abstract public void removeAll();
 

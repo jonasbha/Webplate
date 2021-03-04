@@ -34,7 +34,7 @@ public class Testing_list_functionality {
 
         Assertions.assertEquals(2, page.article.getLast().section.size());
         Assertions.assertEquals(2, page.schema.getLast().fieldset.size());
-        Assertions.assertEquals(2, page.schema.getLast().fieldset.getLast().field.size());
+        Assertions.assertEquals(1, page.schema.getLast().fieldset.getLast().field.size());
     }
 
     @Test

@@ -8,24 +8,28 @@ public class FieldList extends ListNamingAbstraction<Field> {
 
     public SchemaConfig config = new SchemaConfig();
 
-    public void add(String name) {
+    public FieldList add(String name) {
         if (config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
             field.setType("text");
             this.addToRear(field);
+            return this;
         } else
             new ExceptionFactory().notCustomizable("schema");
+        return null;
     }
 
-    public void add(String name, boolean required) {
+    public FieldList add(String name, boolean required) {
         if (config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
             field.setType("text");
             field.setRequired(required);
             this.addToRear(field);
+            return this;
         } else
             new ExceptionFactory().notCustomizable("schema");
+        return null;
     }
 }

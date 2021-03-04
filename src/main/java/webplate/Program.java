@@ -25,12 +25,11 @@ public class Program {
         //page.schema.getLast().fieldset.add().field.addText();
 
 
-        page.schema.addEmpty();
-        page.schema.addEmpty();
+        page.schema.addEmpty().fieldset.add().field.add("email").add("name", true);
         page.schema.removeLast();
         page.schema.addDefault(true);
         page.schema.getLast().fieldset.add();
-        page.schema.getLast().fieldset.add(2);
+        page.schema.getLast().fieldset.add();
         page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.getLast();
