@@ -15,8 +15,7 @@ public class Program {
 
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
-        //page.schema.getLast().fieldset.add().field.addPassword();
-
+        // table og social media
 
         page.schema.removeLast();
         page.schema.addDefault(true);

@@ -1,10 +1,10 @@
 package webplate.list;
 
-import webplate.page.PageConfig;
+import webplate.page.Page;
 
 public abstract class ComponentList<T> extends ListNamingAbstraction<T> {
 
-    public PageConfig config = new PageConfig();
+    public Page page;
 
     abstract public T addEmpty();
 

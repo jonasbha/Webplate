@@ -20,6 +20,15 @@ public class HtmlGenerator {
     private void generateBody(StringBuilder builder, Page page) {
         builder.append("<body>\n");
         generateHeader(builder);
+        builder.append("    <nav>\n");
+        builder.append("        <ul>\n");
+        for (int i = 0; i < Webplate.pages.size(); i++) {
+            builder.append("            <li>\n");
+            builder.append("                <a href=\"path\">").append(Webplate.pages.get(i).metadata.getTitle()).append("</a>\n");
+            builder.append("            </li>\n");
+        }
+        builder.append("        </ul>\n");
+        builder.append("    </nav>\n");
         generateMain(builder, page);
         generateFooter(builder, page);
         builder.append("</body>\n");
@@ -70,7 +79,7 @@ public class HtmlGenerator {
                     for (int fs = 0; fs < page.schema.get(sc).fieldset.size(); fs++) {
                         builder.append("            <fieldset id=\"fieldset").append(fs + 1).append("\">\n");
                         builder.append("                <legend> fieldset title </legend>\n");
-                        int textarea = 1, text = 1, number = 1, email = 1;
+                        int textarea = 1, text = 1, number = 1, email = 1, password = 1;
                         for (int f = 0; f < page.schema.get(sc).fieldset.get(fs).field.size(); f++) {
                             switch (page.schema.get(sc).fieldset.get(fs).field.get(f).getType()) {
                                 case "text" :
@@ -141,6 +150,22 @@ public class HtmlGenerator {
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
                                 break;
+                                case "password":
+                                    builder.append("                <p>\n");
+                                    builder.append("                    <label for=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(password);
+                                    builder.append("\">\n");
+                                    builder.append("                        <span>password: </span>\n");
+                                    builder.append("                    </label>\n");
+                                    builder.append("                    <input type=\"password\" id=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(password);
+                                    password++;
+                                    builder.append("\" name=\"");
+                                    builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
+                                    builder.append("\">\n");
+                                    if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
+                                        builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
+                                    builder.append("                </p>\n");
                             }
                         }
                         builder.append("            </fieldset>\n");
@@ -156,8 +181,11 @@ public class HtmlGenerator {
         builder.append("<html lang=\"").append(page.metadata.getLanguage()).append("\">\n");
         builder.append("<head>\n");
         builder.append("    <meta charset=\"UTF-8\">\n");
-        builder.append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
-        builder.append("    <title>").append(page.metadata.getTitle()).append("</title>\n");
+        builder.append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+        if (page.metadata.getDescription() != null)
+            builder.append("\n    <meta name=\"description\"\n" + "          content=\"").append(page.metadata.getDescription()).append("\">");
+        builder.append("\n    <link media=\"screen\" href=\"\" rel=\"stylesheet\" type=\"text/css\">".repeat(Math.max(0, page.metadata.getStylesheet())));
+        builder.append("\n    <title>").append(page.metadata.getTitle()).append("</title>\n");
         builder.append("</head>\n");
     }
 }

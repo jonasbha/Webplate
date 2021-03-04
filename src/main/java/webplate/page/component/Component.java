@@ -2,8 +2,6 @@ package webplate.page.component;
 
 public abstract class Component {
 
-    public Component() {}
-
     public static abstract class ComponentConfig<E> {
 
         protected E list;

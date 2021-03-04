@@ -105,4 +105,29 @@ public class FieldList extends ListNamingAbstraction<Field> {
             new ExceptionFactory().notCustomizable("schema");
         return null;
     }
+
+    public FieldList addPassword() {
+        if (config.isCustomizable()) {
+            Field field = new Field();
+            field.setType("password");
+            field.setName("password");
+            this.addToRear(field);
+            return this;
+        } else
+            new ExceptionFactory().notCustomizable("schema");
+        return null;
+    }
+
+    public FieldList addPassword(boolean required) {
+        if (config.isCustomizable()) {
+            Field field = new Field();
+            field.setType("password");
+            field.setName("password");
+            field.setRequired(required);
+            this.addToRear(field);
+            return this;
+        } else
+            new ExceptionFactory().notCustomizable("schema");
+        return null;
+    }
 }

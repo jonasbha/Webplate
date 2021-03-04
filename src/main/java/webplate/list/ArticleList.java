@@ -41,9 +41,9 @@ public class ArticleList extends ComponentList<Article> {
     @Override
     public void removeAll() {
         removeAllItems();
-        for (int i = 0; i < config.getParent().config.getComponents().size(); i++)
-            if (config.getParent().config.getComponents().get(i).getClass() == Article.class)
-                config.getParent().config.getComponents().remove(i);
+        for (int i = 0; i < page.config.getComponents().size(); i++)
+            if (page.config.getComponents().get(i).getClass() == Article.class)
+                page.config.getComponents().remove(i);
     }
 
     @Override
@@ -51,12 +51,12 @@ public class ArticleList extends ComponentList<Article> {
         if (this.isEmpty())
             new ExceptionFactory().emptyCollection("schema");
 
-        int last = config.getParent().config.getComponents().size()-1;
-        int size = config.getParent().config.getComponents().size();
+        int last = page.config.getComponents().size()-1;
+        int size = page.config.getComponents().size();
 
-        while (config.getParent().config.getComponents().size() == size) {
-            if (config.getParent().config.getComponents().get(last).getClass() == Article.class) {
-                config.getParent().config.getComponents().remove(last);
+        while (page.config.getComponents().size() == size) {
+            if (page.config.getComponents().get(last).getClass() == Article.class) {
+                page.config.getComponents().remove(last);
                 removeLastItem();
             } else
                 last--;

@@ -52,10 +52,14 @@ public class Testing_generation_of_HTML {
     @Test
     public void verify_html_of_random_build() throws IOException, URISyntaxException {
         page.feature.addCopyright();
+        page.metadata.setDescription("This is a description");
+        page.metadata.addStylesheet();
+        page.metadata.addStylesheet();
+
         page.article.addDefault(true).section.add();
         page.schema.addEmpty().fieldset.add().field.
                 addText("username", true).
-                addText("something else", false);
+                addText("something else", false).addPassword(true);
         Webplate.pages.add(page);
 
         String expected = getHtml("Html/random.html");

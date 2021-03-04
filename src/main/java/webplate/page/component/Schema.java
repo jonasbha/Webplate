@@ -9,7 +9,6 @@ public class Schema extends Component {
     public FieldsetList fieldset = new FieldsetList();
 
     public Schema() {
-        super();
         fieldset.config.schema = this;
         config.schema = this;
     }
@@ -38,8 +37,8 @@ public class Schema extends Component {
 
         @Override
         public void addToBottomOfPage() {
-            list.config.getParent().config.getComponents().remove(schema);
-            list.config.getParent().config.getComponents().add(schema);
+            list.page.config.getComponents().remove(schema);
+            list.page.config.getComponents().add(schema);
         }
     }
 }

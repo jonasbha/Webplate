@@ -10,7 +10,6 @@ public class Article extends Component {
     public Section section = new Section(this);
 
     public Article() {
-        super();
         config.article = this;
     }
 
@@ -30,8 +29,8 @@ public class Article extends Component {
 
         @Override
         public void addToBottomOfPage() {
-            list.config.getParent().config.getComponents().remove(article);
-            list.config.getParent().config.getComponents().add(article);
+            list.page.config.getComponents().remove(article);
+            list.page.config.getComponents().add(article);
         }
     }
 }

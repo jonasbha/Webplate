@@ -7,7 +7,7 @@ public class Metadata {
     private String title;
     private String description;
     private String language = "en";
-    private LinkedList<String> stylesheet;
+    private int stylesheet = 0;
 
     public String getLanguage() {
         return language;
@@ -33,9 +33,11 @@ public class Metadata {
         this.description = description;
     }
 
-    public LinkedList<String> getStylesheet() {
+    public int getStylesheet() {
         return stylesheet;
     }
 
-    public void addStylesheet() {}
+    public void addStylesheet() {
+        stylesheet++;
+    }
 }
