@@ -10,22 +10,14 @@ public class Program {
         * add descriptions like in the list.
         * */
 
-        // intellij generate jar file.
         // alle cases testes senere
         Page page = new Page("title");
 
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
-        //page.schema.getLast().fieldset.getLast().field.addNumber();
-        //page.schema.getLast().fieldset.add().field.addText();
-        //page.schema.getLast().fieldset.add().field.addEmail();
         //page.schema.getLast().fieldset.add().field.addPassword();
-        //page.schema.getLast().fieldset.add().field.addCommentField;
-
-        //page.schema.getLast().fieldset.add().field.addText();
 
 
-        page.schema.addEmpty().fieldset.add().field.add("email").add("name", true);
         page.schema.removeLast();
         page.schema.addDefault(true);
         page.schema.getLast().fieldset.add();
@@ -33,9 +25,8 @@ public class Program {
         page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.removeLast();
         page.schema.getLast().fieldset.getLast();
-        page.schema.getLast().fieldset.getLast().field.add("Number", true);
-        page.schema.getLast().fieldset.getLast().field.add("Email");
-        page.schema.getLast().fieldset.getLast().field.add("TextField");
+        page.schema.addEmpty().fieldset.add().field.addEmail().addText("name", true)
+                .addCommentfield().addNumber("Phone", true);
         page.schema.getLast().fieldset.getLast().field.removeAll();
         page.schema.getLast().fieldset.removeAll();
         page.schema.getLast();

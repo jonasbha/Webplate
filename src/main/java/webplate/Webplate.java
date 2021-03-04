@@ -25,7 +25,7 @@ public class Webplate {
         public static void create() {
             FileHandler fg = new FileHandler();
             for (int i = 0; i < pages.size(); i++)
-                fg.create(new HtmlGenerator().generatePage(0));
+                fg.create(new HtmlGenerator().generatePage(i));
         }
     }
 

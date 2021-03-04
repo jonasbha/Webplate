@@ -104,7 +104,7 @@ public class Testing_list_functionality {
     public void all_properties_within_a_category_can_be_removed_from_list_at_once() {
         page.schema.addEmpty();
         page.schema.getLast().fieldset.add();
-        page.schema.getLast().fieldset.getLast().field.add("Name");
+        page.schema.getLast().fieldset.getLast().field.addText("Name");
 
         page.schema.getLast().fieldset.getLast().field.removeAll();
         Assertions.assertEquals(0, page.schema.getLast().fieldset.getLast().field.size());

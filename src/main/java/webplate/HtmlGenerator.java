@@ -12,25 +12,42 @@ public class HtmlGenerator {
         Page page = Webplate.pages.get(index);
 
         generateMetadata(builder, page);
-        generateMain(builder, page);
+        generateBody(builder, page);
 
         return builder.toString();
     }
 
-    private static void generateMain(StringBuilder builder, Page page) {
+    private void generateBody(StringBuilder builder, Page page) {
         builder.append("<body>\n");
-        builder.append("    <header>\n");
-        builder.append("        <h1> Title </h1>\n");
-        builder.append("    </header>\n");
-        builder.append("    <main>\n");
-        generateComponents(builder, page);
-        builder.append("    </main>\n");
-        builder.append("    <footer></footer>\n");
+        generateHeader(builder);
+        generateMain(builder, page);
+        generateFooter(builder, page);
         builder.append("</body>\n");
         builder.append("</html>");
     }
 
-    private static void generateComponents(StringBuilder builder, Page page) {
+    private void generateHeader(StringBuilder builder) {
+        builder.append("    <header>\n");
+        builder.append("        <h1> Title </h1>\n");
+        builder.append("    </header>\n");
+    }
+
+    private void generateFooter(StringBuilder builder, Page page) {
+        if (page.feature.getCopyright() != null) {
+            builder.append("    <footer>\n");
+            builder.append("        <address>\n");
+            builder.append("            <p>\n");
+            builder.append("                <time datetime=\"<insert date>\">insert date</time>\n");
+            builder.append("                &copy; Your name, <a href=\"mailto:<your email>\"> Your email </a>\n");
+            builder.append("            </p>\n");
+            builder.append("        </address>\n");
+            builder.append("    </footer>\n");
+        } else
+            builder.append("    <footer></footer>\n");
+    }
+
+    private void generateMain(StringBuilder builder, Page page) {
+        builder.append("    <main>\n");
         for (int p = 0; p < page.config.getComponents().size(); p++)
             if (page.config.getComponents().get(p).getClass() == Article.class)
                 for (int a = 0; a < page.article.size(); a++) {
@@ -95,14 +112,14 @@ public class HtmlGenerator {
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(number);
                                     builder.append("\">\n");
-                                    builder.append("                        <span>phone number: </span>\n");
+                                    builder.append("                        <span>").append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName()).append(" number: </span>\n");
                                     builder.append("                    </label>\n");
                                     builder.append("                    <input type=\"number\" id=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(number);
                                     number++;
                                     builder.append("\" name=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getName());
-                                    builder.append("\" min=\"8\" max=\"8\">\n");
+                                    builder.append("_number\" min=\"8\" max=\"8\">\n");
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
@@ -131,9 +148,10 @@ public class HtmlGenerator {
                     builder.append("            <br><br><input type=\"submit\">\n");
                     builder.append("        </form>\n");
                 }
+        builder.append("    </main>\n");
     }
 
-    private static void generateMetadata(StringBuilder builder, Page page) {
+    private void generateMetadata(StringBuilder builder, Page page) {
         builder.append("<!DOCTYPE html>\n");
         builder.append("<html lang=\"").append(page.metadata.getLanguage()).append("\">\n");
         builder.append("<head>\n");

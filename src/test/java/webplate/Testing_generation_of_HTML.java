@@ -32,7 +32,7 @@ public class Testing_generation_of_HTML {
         page.article.addDefault();
         Webplate.pages.add(page);
 
-        String expected = getHtml("defaultArticle.html");
+        String expected = getHtml("Html/defaultArticle.html");
         String actual = new HtmlGenerator().generatePage(0);
 
         Assertions.assertEquals(expected, actual);
@@ -43,7 +43,7 @@ public class Testing_generation_of_HTML {
         page.schema.addDefault();
         Webplate.pages.add(page);
 
-        String expected = getHtml("defaultSchema.html");
+        String expected = getHtml("Html/defaultSchema.html");
         String actual = new HtmlGenerator().generatePage(0);
 
         Assertions.assertEquals(expected, actual);
@@ -51,15 +51,14 @@ public class Testing_generation_of_HTML {
 
     @Test
     public void verify_html_of_random_build() throws IOException, URISyntaxException {
-        page.article.addDefault(true);
-        page.article.getLast().section.add();
-        page.schema.addEmpty();
-        page.schema.getLast().fieldset.add();
-        page.schema.getLast().fieldset.getLast().field.add("username", true);
-        page.schema.getLast().fieldset.getLast().field.add("username", false);
+        page.feature.addCopyright();
+        page.article.addDefault(true).section.add();
+        page.schema.addEmpty().fieldset.add().field.
+                addText("username", true).
+                addText("something else", false);
         Webplate.pages.add(page);
 
-        String expected = getHtml("random.html");
+        String expected = getHtml("Html/random.html");
         String actual = new HtmlGenerator().generatePage(0);
 
         Assertions.assertEquals(expected, actual);

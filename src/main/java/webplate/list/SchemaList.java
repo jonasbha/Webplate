@@ -22,14 +22,10 @@ public class SchemaList extends ComponentList<Schema> {
         Schema schema = new Schema();
         schema.fieldset.add();
         schema.fieldset.add();
-        schema.fieldset.get(0).field.add("username", true);
-        schema.fieldset.get(0).field.add("email", true);
-        schema.fieldset.get(0).field.add("phone_number", false);
-        schema.fieldset.get(1).field.add("", false);
-        schema.fieldset.get(0).field.get(0).setType("text");
-        schema.fieldset.get(0).field.get(1).setType("email");
-        schema.fieldset.get(0).field.get(2).setType("number");
-        schema.fieldset.get(1).field.get(0).setType("textarea");
+        schema.fieldset.get(0).field.addText("username", true);
+        schema.fieldset.get(0).field.addEmail(true);
+        schema.fieldset.get(0).field.addNumber("phone", false);
+        schema.fieldset.get(1).field.addCommentfield( false);
 
         schema.config.setCustomizable(false);
         schema.config.setList(this);
@@ -43,9 +39,11 @@ public class SchemaList extends ComponentList<Schema> {
         Schema schema = new Schema();
         schema.fieldset.add();
         schema.fieldset.add();
-        schema.fieldset.get(0).field.add("insert field name here", true);
-        schema.fieldset.get(0).field.add("insert field name here", false);
-        schema.fieldset.get(1).field.add("insert field name here", true);
+        schema.fieldset.get(0).field.addText("username", true);
+        schema.fieldset.get(0).field.addEmail(true);
+        schema.fieldset.get(0).field.addNumber("phone", false);
+        schema.fieldset.get(1).field.addCommentfield( false);
+
         schema.config.setList(this);
         schema.config.setCustomizable(customizable);
         schema.config.addToBottomOfPage();
