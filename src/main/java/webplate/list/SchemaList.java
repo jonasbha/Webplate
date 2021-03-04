@@ -5,6 +5,8 @@ import webplate.page.component.Schema;
 
 public class SchemaList extends ComponentList<Schema> {
 
+
+
     @Override
     public void addEmpty() {
         Schema schema = new Schema();

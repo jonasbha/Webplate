@@ -10,17 +10,19 @@ public class Program {
         * add descriptions like in the list.
         * */
 
+        // intellij generate jar file.
         // alle cases testes senere
         Page page = new Page("title");
 
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
-        //page.schema.getLast().fieldset.add().field.add();
         //page.schema.getLast().fieldset.getLast().field.addNumber();
         //page.schema.getLast().fieldset.add().field.addText();
         //page.schema.getLast().fieldset.add().field.addEmail();
         //page.schema.getLast().fieldset.add().field.addPassword();
         //page.schema.getLast().fieldset.add().field.addCommentField;
+
+        //page.schema.getLast().fieldset.add().field.addText();
 
 
         page.schema.addEmpty();
