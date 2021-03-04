@@ -56,7 +56,7 @@ public class HtmlGenerator {
                         int textarea = 1, text = 1, number = 1, email = 1;
                         for (int f = 0; f < page.schema.get(sc).fieldset.get(fs).field.size(); f++) {
                             switch (page.schema.get(sc).fieldset.get(fs).field.get(f).getType()) {
-                                case "text" -> {
+                                case "text" :
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(text);
@@ -72,8 +72,8 @@ public class HtmlGenerator {
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
-                                }
-                                case "email" -> {
+                                break;
+                                case "email":
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(email);
@@ -89,8 +89,8 @@ public class HtmlGenerator {
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
-                                }
-                                case "number" -> {
+                                break;
+                                case "number" :
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(number);
@@ -106,8 +106,8 @@ public class HtmlGenerator {
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
-                                }
-                                case "textarea" -> {
+                                break;
+                                case "textarea" :
                                     builder.append("                <p>\n");
                                     builder.append("                    <label for=\"");
                                     builder.append(page.schema.get(sc).fieldset.get(fs).field.get(f).getType()).append(textarea);
@@ -123,7 +123,7 @@ public class HtmlGenerator {
                                     if (page.schema.get(sc).fieldset.get(fs).field.get(f).isRequired())
                                         builder.append("                    <strong style=\"color:red;\"><abbr title=\"required\">*</abbr></strong>\n");
                                     builder.append("                </p>\n");
-                                }
+                                break;
                             }
                         }
                         builder.append("            </fieldset>\n");
