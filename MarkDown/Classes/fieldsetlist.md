@@ -16,6 +16,12 @@ Custom List for the property fieldset
 |---|---|---|
 |SchemaConfig|config|Determines wether configuration is possible|
 
+#### Method
+---
+|Type|Modifier|MethodName|Description|
+|---|---|---|---|
+|FieldSet|public|add()|Creates a Fieldset which it then returns|
+
 
 Return to [package](../Packages/website_list.md)
 
