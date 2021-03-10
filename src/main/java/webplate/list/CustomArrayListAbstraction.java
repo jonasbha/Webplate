@@ -1,6 +1,6 @@
 package webplate.list;
 
-public abstract class ListNamingAbstraction<T> extends CustomArrayList<T> {
+public abstract class CustomArrayListAbstraction<T> extends CustomArrayList<T> {
 
     public void removeAll() {
         removeAllItems();

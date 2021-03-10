@@ -1,9 +1,9 @@
 package webplate.page.component;
 
-import webplate.list.ListNamingAbstraction;
+import webplate.list.CustomArrayListAbstraction;
 import webplate.page.Page;
 
-public abstract class ComponentList<T> extends ListNamingAbstraction<T> {
+public abstract class ComponentList<T> extends CustomArrayListAbstraction<T> {
 
     public Page page;
 

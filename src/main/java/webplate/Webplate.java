@@ -1,12 +1,13 @@
 package webplate;
 
+import webplate.list.ArrayListExtension;
 import webplate.page.Page;
 
 import java.util.ArrayList;
 
 public class Webplate {
 
-    public static final ArrayList<Page> Pages = new ArrayList<>();
+    public static final ArrayListExtension<Page> Pages = new ArrayListExtension<>();
 
     public static class Html {
 

@@ -1,9 +1,9 @@
 package webplate.page.component.schema;
 
 import webplate.exception.ExceptionFactory;
-import webplate.list.ListNamingAbstraction;
+import webplate.list.CustomArrayListAbstraction;
 
-public class FieldsetList extends ListNamingAbstraction<FieldSet> {
+public class FieldsetList extends CustomArrayListAbstraction<FieldSet> {
 
     public Schema.Config Config = new Schema.Config();
 

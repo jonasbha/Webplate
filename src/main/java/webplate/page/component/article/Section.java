@@ -4,7 +4,7 @@ import webplate.exception.ExceptionFactory;
 
 public class Section {
 
-    private Article article;
+    private final Article article;
     private int value;
 
     public Section(Article article) {

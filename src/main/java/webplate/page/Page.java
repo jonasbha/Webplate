@@ -1,5 +1,6 @@
 package webplate.page;
 
+import webplate.list.ArrayListExtension;
 import webplate.page.component.article.ArticleList;
 import webplate.page.component.schema.SchemaList;
 import webplate.page.component.Component;
@@ -19,21 +20,23 @@ public class Page  {
         Metadata.setTitle(title);
         Schema.page = this;
         Article.page = this;
-        Config.parent = this;
     }
 
     public Page(String title, String description) {
         Metadata.setTitle(title);
         Metadata.setDescription(description);
+        Schema.page = this;
+        Article.page = this;
     }
 
-    public Page() {}
+    public Page() {
+        Schema.page = this;
+        Article.page = this;
+    }
 
     public static class Config {
 
-        protected Page parent;
-
-        protected ArrayList<Component> components = new ArrayList<>();
+        protected ArrayListExtension<Component> components = new ArrayListExtension<>();
 
         public ArrayList<Component> getComponents() {
             return components;
