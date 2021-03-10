@@ -17,7 +17,6 @@ public class Program {
         //page.article.getLast().section.add("Sport");
         // table og social media
 
-        page.schema.removeLast();
         page.schema.addDefault(true);
         page.schema.getLast().fieldset.add();
         page.schema.getLast().fieldset.add();
@@ -34,18 +33,16 @@ public class Program {
         page.article.addEmpty();
         page.article.addDefault(true);
         page.article.getLast();
-        page.article.removeLast();
-        page.article.get(2);
+        page.article.get(1);
         page.article.getLast().section.add();
         page.article.getLast().section.add(2);
-        page.article.get(2).section.add();
+        page.article.get(1).section.add();
         page.article.getLast().section.removeLast();
         page.article.getLast().section.removeAll();
 
         page.metadata.setDescription("Hello");
         page.metadata.addStylesheet();
         page.metadata.setTitle("New title");
-        page.metadata.setLanguage("nb");
 
         page.feature.addCopyright();
 

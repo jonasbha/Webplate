@@ -10,7 +10,7 @@ public class Webplate {
 
     public static class html {
 
-        private static String language;
+        private static String language = "en";
 
         public static void setLanguage(String language) {
             html.language = language;

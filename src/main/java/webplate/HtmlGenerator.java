@@ -178,7 +178,7 @@ public class HtmlGenerator {
 
     private void generateMetadata(StringBuilder builder, Page page) {
         builder.append("<!DOCTYPE html>\n");
-        builder.append("<html lang=\"").append(page.metadata.getLanguage()).append("\">\n");
+        builder.append("<html lang=\"").append(Webplate.html.getLanguage()).append("\">\n");
         builder.append("<head>\n");
         builder.append("    <meta charset=\"UTF-8\">\n");
         builder.append("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
