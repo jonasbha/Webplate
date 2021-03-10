@@ -1,14 +1,11 @@
 package webplate;
 
+
 import webplate.page.Page;
 
 public class Program {
 
     public static void main(String[] args) {
-        /*
-        * to do:
-        * add descriptions like in the list.
-        * */
 
         // alle cases testes senere
         Page page = new Page("title");
@@ -16,41 +13,43 @@ public class Program {
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
         // table og social media
+        // remove:
+        // component.page
+        // component.config.setList()
+        // config.getSchema() config.setSchema();
 
-        page.schema.addDefault(true);
-        page.schema.getLast().fieldset.add();
-        page.schema.getLast().fieldset.add();
-        page.schema.getLast().fieldset.removeLast();
-        page.schema.getLast().fieldset.removeLast();
-        page.schema.getLast().fieldset.getLast();
-        page.schema.addEmpty().fieldset.add().field.addEmail().addText("name", true)
+        page.Schema.addDefault(true);
+        page.Schema.getLast().Fieldset.add();
+        page.Schema.getLast().Fieldset.add();
+        page.Schema.getLast().Fieldset.removeLast();
+        page.Schema.getLast().Fieldset.removeLast();
+        page.Schema.getLast().Fieldset.getLast();
+        page.Schema.addEmpty().Fieldset.add().Field.addEmail().addText("name", true)
                 .addCommentfield().addNumber("Phone", true);
-        page.schema.getLast().fieldset.getLast().field.removeAll();
-        page.schema.getLast().fieldset.removeAll();
-        page.schema.getLast();
+        page.Schema.getLast().Fieldset.getLast().Field.removeAll();
+        page.Schema.getLast().Fieldset.removeAll();
+        page.Schema.getLast();
 
-        page.article.addDefault();
-        page.article.addEmpty();
-        page.article.addDefault(true);
-        page.article.getLast();
-        page.article.get(1);
-        page.article.getLast().section.add();
-        page.article.getLast().section.add(2);
-        page.article.get(1).section.add();
-        page.article.getLast().section.removeLast();
-        page.article.getLast().section.removeAll();
+        page.Article.addDefault();
+        page.Article.addEmpty();
+        page.Article.addDefault(true);
+        page.Article.getLast();
+        page.Article.get(1);
+        page.Article.getLast().Section.add();
+        page.Article.getLast().Section.add(2);
+        page.Article.get(1).Section.add();
+        page.Article.getLast().Section.removeLast();
+        page.Article.getLast().Section.removeAll();
 
-        page.metadata.setDescription("Hello");
-        page.metadata.addStylesheet();
-        page.metadata.setTitle("New title");
+        page.Metadata.setDescription("Hello");
+        page.Metadata.addStylesheet();
+        page.Metadata.setTitle("New title");
 
-        page.feature.addCopyright();
+        page.Feature.addCopyright();
 
-        Webplate.html.create();
-        Webplate.pages.add(page);
-        Webplate.html.setLanguage("nb");
-
-
+        Webplate.Html.create();
+        Webplate.Pages.add(page);
+        Webplate.Html.setLanguage("nb");
 
     }
 }

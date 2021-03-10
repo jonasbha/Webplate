@@ -8,7 +8,7 @@ public abstract class Component {
 
         protected boolean customizable = true;
 
-        abstract public void setList(E list);
+        abstract protected void setList(E list);
 
         public abstract boolean isCustomizable();
 

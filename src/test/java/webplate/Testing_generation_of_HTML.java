@@ -24,13 +24,13 @@ public class Testing_generation_of_HTML {
 
     @AfterEach
     public void resetPage() {
-        Webplate.pages.clear();
+        Webplate.Pages.clear();
     }
 
     @Test
     public void verify_html_of_default_article_template() throws IOException, URISyntaxException {
-        page.article.addDefault();
-        Webplate.pages.add(page);
+        page.Article.addDefault();
+        Webplate.Pages.add(page);
 
         String expected = getHtml("Html/defaultArticle.html");
         String actual = new HtmlGenerator().generatePage(0);
@@ -40,8 +40,8 @@ public class Testing_generation_of_HTML {
 
     @Test
     public void verify_html_of_default_schema_template() throws IOException, URISyntaxException {
-        page.schema.addDefault();
-        Webplate.pages.add(page);
+        page.Schema.addDefault();
+        Webplate.Pages.add(page);
 
         String expected = getHtml("Html/defaultSchema.html");
         String actual = new HtmlGenerator().generatePage(0);
@@ -51,16 +51,16 @@ public class Testing_generation_of_HTML {
 
     @Test
     public void verify_html_of_random_build() throws IOException, URISyntaxException {
-        page.feature.addCopyright();
-        page.metadata.setDescription("This is a description");
-        page.metadata.addStylesheet();
-        page.metadata.addStylesheet();
+        page.Feature.addCopyright();
+        page.Metadata.setDescription("This is a description");
+        page.Metadata.addStylesheet();
+        page.Metadata.addStylesheet();
 
-        page.article.addDefault(true).section.add();
-        page.schema.addEmpty().fieldset.add().field.
+        page.Article.addDefault(true).Section.add();
+        page.Schema.addEmpty().Fieldset.add().Field.
                 addText("username", true).
                 addText("something else", false).addPassword(true);
-        Webplate.pages.add(page);
+        Webplate.Pages.add(page);
 
         String expected = getHtml("Html/random.html");
         String actual = new HtmlGenerator().generatePage(0);

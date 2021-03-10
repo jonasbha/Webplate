@@ -1,15 +1,14 @@
-package webplate.list;
+package webplate.page.component.schema;
 
 import webplate.exception.ExceptionFactory;
-import webplate.page.component.Schema;
-import webplate.page.component.property.Field;
+import webplate.list.ListNamingAbstraction;
 
 public class FieldList extends ListNamingAbstraction<Field> {
 
-    public Schema.config config = new Schema.config();
+    public Schema.Config Config = new Schema.Config();
 
     public FieldList addText(String name) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
             field.setType("text");
@@ -21,7 +20,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addText(String name, boolean required) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setName(name);
             field.setType("text");
@@ -33,19 +32,8 @@ public class FieldList extends ListNamingAbstraction<Field> {
         return null;
     }
 
-    public FieldList addNumber() {
-        if (config.isCustomizable()) {
-            Field field = new Field();
-            field.setType("number");
-            this.addToRear(field);
-            return this;
-        } else
-            new ExceptionFactory().notCustomizable("schema");
-        return null;
-    }
-
     public FieldList addNumber(String type, boolean required) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setName(type);
             field.setType("number");
@@ -58,7 +46,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addEmail() {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setName("email");
             field.setType("email");
@@ -70,7 +58,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addEmail(boolean required) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setName("email");
             field.setType("email");
@@ -83,7 +71,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addCommentfield() {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setType("textarea");
             this.addToRear(field);
@@ -94,7 +82,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addCommentfield(boolean required) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setType("textarea");
             field.setName("");
@@ -107,7 +95,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addPassword() {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setType("password");
             field.setName("password");
@@ -119,7 +107,7 @@ public class FieldList extends ListNamingAbstraction<Field> {
     }
 
     public FieldList addPassword(boolean required) {
-        if (config.isCustomizable()) {
+        if (Config.isCustomizable()) {
             Field field = new Field();
             field.setType("password");
             field.setName("password");

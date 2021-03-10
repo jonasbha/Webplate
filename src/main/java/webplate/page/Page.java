@@ -1,7 +1,7 @@
 package webplate.page;
 
-import webplate.list.ArticleList;
-import webplate.list.SchemaList;
+import webplate.page.component.article.ArticleList;
+import webplate.page.component.schema.SchemaList;
 import webplate.page.component.Component;
 import webplate.page.feature.Feature;
 
@@ -9,27 +9,27 @@ import java.util.ArrayList;
 
 public class Page  {
 
-    public Metadata metadata = new Metadata();
-    public Feature feature = new Feature();
-    public ArticleList article = new ArticleList();
-    public SchemaList schema = new SchemaList();
-    public Page.config config = new config();
+    public Metadata Metadata = new Metadata();
+    public Feature Feature = new Feature();
+    public ArticleList Article = new ArticleList();
+    public SchemaList Schema = new SchemaList();
+    public Page.Config Config = new Config();
 
     public Page(String title) {
-        metadata.setTitle(title);
-        schema.page = this;
-        article.page = this;
-        config.parent = this;
+        Metadata.setTitle(title);
+        Schema.page = this;
+        Article.page = this;
+        Config.parent = this;
     }
 
     public Page(String title, String description) {
-        metadata.setTitle(title);
-        metadata.setDescription(description);
+        Metadata.setTitle(title);
+        Metadata.setDescription(description);
     }
 
     public Page() {}
 
-    public static class config {
+    public static class Config {
 
         protected Page parent;
 

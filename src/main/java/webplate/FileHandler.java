@@ -11,7 +11,7 @@ public class FileHandler {
     public void create(String content, int index) {
 
         try{
-            File file = new File(Webplate.pages.get(index).metadata.getTitle() + ".html");
+            File file = new File(Webplate.Pages.get(index).Metadata.getTitle() + ".html");
             if(file.createNewFile()){
                 System.out.println("File created: " + file.getName());
             }

@@ -1,4 +1,4 @@
-package webplate.page.component.property;
+package webplate.page.component.schema;
 
 public class Field {
 

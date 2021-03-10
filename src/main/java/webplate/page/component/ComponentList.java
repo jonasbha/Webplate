@@ -1,5 +1,6 @@
-package webplate.list;
+package webplate.page.component;
 
+import webplate.list.ListNamingAbstraction;
 import webplate.page.Page;
 
 public abstract class ComponentList<T> extends ListNamingAbstraction<T> {

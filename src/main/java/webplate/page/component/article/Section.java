@@ -1,7 +1,6 @@
-package webplate.page.component.property;
+package webplate.page.component.article;
 
 import webplate.exception.ExceptionFactory;
-import webplate.page.component.Article;
 
 public class Section {
 
@@ -15,7 +14,7 @@ public class Section {
     public int size() { return value; }
 
     public void add() {
-        if (article.config.isCustomizable())
+        if (article.Config.isCustomizable())
             value++;
         else
             new ExceptionFactory().notCustomizable("article");

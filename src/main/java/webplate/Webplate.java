@@ -6,14 +6,14 @@ import java.util.ArrayList;
 
 public class Webplate {
 
-    public static final ArrayList<Page> pages = new ArrayList<>();
+    public static final ArrayList<Page> Pages = new ArrayList<>();
 
-    public static class html {
+    public static class Html {
 
         private static String language = "en";
 
         public static void setLanguage(String language) {
-            html.language = language;
+            Html.language = language;
         }
 
         public static String getLanguage() {
@@ -24,7 +24,7 @@ public class Webplate {
 
         public static void create() {
             FileHandler fg = new FileHandler();
-            for (int i = 0; i < pages.size(); i++)
+            for (int i = 0; i < Pages.size(); i++)
                 fg.create(new HtmlGenerator().generatePage(i), i);
         }
     }

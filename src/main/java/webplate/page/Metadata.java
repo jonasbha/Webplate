@@ -1,7 +1,5 @@
 package webplate.page;
 
-import java.util.LinkedList;
-
 public class Metadata {
 
     private String title;
