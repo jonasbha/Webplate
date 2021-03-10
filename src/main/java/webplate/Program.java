@@ -13,7 +13,6 @@ public class Program {
         //page.article.addEmpty("VG");
         //page.article.getLast().section.add("Sport");
         // table og social media
-        // remove component.page
 
         page.Schema.addDefault(true);
         page.Schema.getLast().Fieldset.add();
@@ -47,6 +46,5 @@ public class Program {
         Webplate.Html.create();
         Webplate.Pages.add(page);
         Webplate.Html.setLanguage("nb");
-
     }
 }

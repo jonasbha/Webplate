@@ -1,6 +1,7 @@
 package webplate.page.component.article;
 
 import webplate.page.component.Component;
+import webplate.page.component.ComponentList;
 
 
 public class Article extends Component {
@@ -28,8 +29,8 @@ public class Article extends Component {
 
         @Override
         public void addToBottomOfPage() {
-            list.page.Config.getComponents().remove(article);
-            list.page.Config.getComponents().add(article);
+            ComponentList.Config.getPage().Config.getComponents().remove(article);
+            ComponentList.Config.getPage().Config.getComponents().add(article);
         }
     }
 }

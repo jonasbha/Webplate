@@ -1,6 +1,7 @@
 package webplate.page.component.schema;
 
 import webplate.page.component.Component;
+import webplate.page.component.ComponentList;
 
 public class Schema extends Component {
 
@@ -36,8 +37,8 @@ public class Schema extends Component {
 
         @Override
         public void addToBottomOfPage() {
-            list.page.Config.getComponents().remove(schema);
-            list.page.Config.getComponents().add(schema);
+            ComponentList.Config.getPage().Config.getComponents().remove(schema);
+            ComponentList.Config.getPage().Config.getComponents().add(schema);
         }
     }
 }

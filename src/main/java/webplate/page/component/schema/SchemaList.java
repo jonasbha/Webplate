@@ -53,9 +53,9 @@ public class SchemaList extends ComponentList<Schema> {
     @Override
     public void removeAll() {
         removeAllItems();
-        for (int i = 0; i < page.Config.getComponents().size(); i++)
-            if (page.Config.getComponents().get(i).getClass() == Schema.class)
-                page.Config.getComponents().remove(i);
+        for (int i = 0; i < Config.getPage().Config.getComponents().size(); i++)
+            if (Config.getPage().Config.getComponents().get(i).getClass() == Schema.class)
+                Config.getPage().Config.getComponents().remove(i);
     }
 
     @Override
@@ -63,12 +63,12 @@ public class SchemaList extends ComponentList<Schema> {
         if (this.isEmpty()) {
             new ExceptionFactory().emptyCollection("schema");
         }
-        int last = page.Config.getComponents().size()-1;
-        int size = page.Config.getComponents().size();
+        int last = Config.getPage().Config.getComponents().size()-1;
+        int size = Config.getPage().Config.getComponents().size();
 
-        while (page.Config.getComponents().size() == size) {
-            if (page.Config.getComponents().get(last).getClass() == Schema.class) {
-                page.Config.getComponents().remove(last);
+        while (Config.getPage().Config.getComponents().size() == size) {
+            if (Config.getPage().Config.getComponents().get(last).getClass() == Schema.class) {
+                Config.getPage().Config.getComponents().remove(last);
                 removeLastItem();
             } else
                 last--;
