@@ -53,5 +53,7 @@ public class Program {
         Webplate.pages.add(page);
         Webplate.html.setLanguage("nb");
 
+
+
     }
 }
